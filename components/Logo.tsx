@@ -65,7 +65,7 @@ export default function Logo({ variant = "light", height = 40 }: LogoProps) {
       <text
         fontFamily="var(--font-orbitron, 'Orbitron', sans-serif)"
         fontWeight="400"
-        fontSize="11"
+        fontSize="14"
         fill={taglineFill}
         letterSpacing="1.5"
         x="95"
