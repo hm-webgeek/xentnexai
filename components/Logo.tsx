@@ -10,13 +10,14 @@ export default function Logo({ variant = "light", height = 40 }: LogoProps) {
   // Ring is ink (#1A2740) on light — swap to white on dark so it's visible against navy
   const ringStroke = variant === "dark" ? "#FFFFFF" : "#1A2740";
 
-  // viewBox 480x90 — icon centred at (45,45), wordmark starts x=95
-  const width = height * (480 / 90);
+  // viewBox 480x98 — icon centred at (45,45), wordmark starts x=95
+  // Height extended to 98 to accommodate 5px gap between wordmark and tagline
+  const width = height * (480 / 98);
 
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 480 90"
+      viewBox="0 0 480 98"
       width={width}
       height={height}
       role="img"
@@ -72,7 +73,7 @@ export default function Logo({ variant = "light", height = 40 }: LogoProps) {
         fill={taglineFill}
         letterSpacing="1.5"
         x="95"
-        y="67"
+        y="75"
       >
         SUNSHINE COAST AI SERVICES
       </text>
