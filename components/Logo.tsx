@@ -8,13 +8,13 @@ export default function Logo({ variant = "light", height = 40 }: LogoProps) {
   const taglineFill = variant === "dark" ? "#94A3B8" : "#64748B";
   const centralNodeFill = variant === "dark" ? "#0B1426" : "#1A2740";
 
-  // Maintain aspect ratio: original viewBox 420x80
-  const width = height * (420 / 80);
+  // Maintain aspect ratio: viewBox 480x80
+  const width = height * (480 / 80);
 
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 420 80"
+      viewBox="0 0 480 80"
       width={width}
       height={height}
       role="img"
@@ -43,13 +43,13 @@ export default function Logo({ variant = "light", height = 40 }: LogoProps) {
           x="90"
           fontFamily="var(--font-orbitron, 'Orbitron', sans-serif)"
           fontWeight="700"
-          fontSize="28"
+          fontSize="34"
           fill={wordmarkFill}
           letterSpacing="-0.5"
         >XentneX</tspan><tspan
           fontFamily="var(--font-orbitron, 'Orbitron', sans-serif)"
           fontWeight="700"
-          fontSize="28"
+          fontSize="34"
           fill="#2DD4BF"
           letterSpacing="-0.3"
         >AI</tspan>
@@ -59,7 +59,7 @@ export default function Logo({ variant = "light", height = 40 }: LogoProps) {
       <text
         fontFamily="var(--font-orbitron, 'Orbitron', sans-serif)"
         fontWeight="400"
-        fontSize="9"
+        fontSize="11"
         fill={taglineFill}
         letterSpacing="1"
         x="90"
