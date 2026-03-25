@@ -105,13 +105,13 @@ export default function HomePage() {
       {/* Services section */}
       <section
         id="services"
-        style={{ backgroundColor: "#0B1426", padding: "5rem 1.5rem" }}
+        style={{ backgroundColor: "#F8FAFB", padding: "5rem 1.5rem" }}
       >
         <div style={{ maxWidth: "72rem", margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: "3rem" }}>
             <p
               style={{
-                color: "#2DD4BF",
+                color: "#1BA899",
                 fontSize: "0.875rem",
                 fontWeight: 600,
                 textTransform: "uppercase",
@@ -125,7 +125,7 @@ export default function HomePage() {
               style={{
                 fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)",
                 fontWeight: 700,
-                color: "#F0F4F8",
+                color: "#1A2740",
                 letterSpacing: "-0.02em",
                 marginBottom: "1rem",
               }}
@@ -134,7 +134,7 @@ export default function HomePage() {
             </h2>
             <p
               style={{
-                color: "#94A3B8",
+                color: "#64748B",
                 fontSize: "1rem",
                 maxWidth: "52ch",
                 margin: "0 auto",

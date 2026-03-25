@@ -104,29 +104,29 @@ export default function GEOAuditReportsPage() {
       />
 
       {/* What is GEO — explainer */}
-      <section style={{ backgroundColor: "#0F1D35", padding: "5rem 1.5rem" }}>
+      <section style={{ backgroundColor: "#F8FAFB", padding: "5rem 1.5rem" }}>
         <div style={{ maxWidth: "56rem", margin: "0 auto" }}>
           <div
             style={{
               padding: "2.5rem",
               borderRadius: "1.25rem",
-              background: "linear-gradient(135deg, rgba(45, 212, 191, 0.08) 0%, rgba(232, 160, 32, 0.08) 100%)",
-              border: "1px solid rgba(45, 212, 191, 0.2)",
+              background: "linear-gradient(135deg, rgba(45, 212, 191, 0.06) 0%, rgba(232, 160, 32, 0.06) 100%)",
+              border: "1px solid rgba(45, 212, 191, 0.25)",
               marginBottom: "4rem",
             }}
           >
-            <p style={{ color: "#2DD4BF", fontSize: "0.8125rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "0.75rem" }}>
+            <p style={{ color: "#1BA899", fontSize: "0.8125rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "0.75rem" }}>
               What is GEO?
             </p>
-            <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2rem)", fontWeight: 700, color: "#F0F4F8", letterSpacing: "-0.02em", marginBottom: "1rem" }}>
+            <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2rem)", fontWeight: 700, color: "#1A2740", letterSpacing: "-0.02em", marginBottom: "1rem" }}>
               Generative Engine Optimisation — The New SEO
             </h2>
-            <p style={{ color: "#94A3B8", fontSize: "1rem", lineHeight: 1.75, marginBottom: "1rem" }}>
-              Traditional SEO gets your website ranked on Google. <strong style={{ color: "#F0F4F8" }}>GEO</strong> gets your
+            <p style={{ color: "#334155", fontSize: "1rem", lineHeight: 1.75, marginBottom: "1rem" }}>
+              Traditional SEO gets your website ranked on Google. <strong style={{ color: "#1A2740" }}>GEO</strong> gets your
               business <em>mentioned and recommended</em> by AI tools like ChatGPT, Google&apos;s AI Overviews,
               Gemini, and Perplexity — where millions of Australians are now starting their search for local businesses.
             </p>
-            <p style={{ color: "#94A3B8", fontSize: "1rem", lineHeight: 1.75 }}>
+            <p style={{ color: "#334155", fontSize: "1rem", lineHeight: 1.75 }}>
               AI search is growing rapidly in Australia. Businesses that optimise for GEO now will own significant
               market share in their local area before their competitors even know it&apos;s happening.
             </p>
@@ -134,12 +134,12 @@ export default function GEOAuditReportsPage() {
 
           {/* AI platforms grid */}
           <div style={{ textAlign: "center", marginBottom: "2rem" }}>
-            <h3 style={{ color: "#F0F4F8", fontWeight: 600, fontSize: "1.125rem", marginBottom: "1.5rem" }}>
+            <h3 style={{ color: "#1A2740", fontWeight: 600, fontSize: "1.125rem", marginBottom: "1.5rem" }}>
               Platforms We Audit
             </h3>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "0.625rem", justifyContent: "center" }}>
               {AI_PLATFORMS.map((p) => (
-                <span key={p} style={{ padding: "0.375rem 0.875rem", borderRadius: "9999px", border: "1px solid rgba(45, 212, 191, 0.25)", backgroundColor: "rgba(45, 212, 191, 0.06)", color: "#94A3B8", fontSize: "0.8125rem", fontWeight: 500 }}>
+                <span key={p} style={{ padding: "0.375rem 0.875rem", borderRadius: "9999px", border: "1px solid rgba(45, 212, 191, 0.25)", backgroundColor: "#E6FAF8", color: "#64748B", fontSize: "0.8125rem", fontWeight: 500 }}>
                   {p}
                 </span>
               ))}
@@ -149,22 +149,22 @@ export default function GEOAuditReportsPage() {
       </section>
 
       {/* Features */}
-      <section style={{ backgroundColor: "#0B1426", padding: "5rem 1.5rem" }}>
+      <section style={{ backgroundColor: "#FFFFFF", padding: "5rem 1.5rem" }}>
         <div style={{ maxWidth: "72rem", margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: "3rem" }}>
-            <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", fontWeight: 700, color: "#F0F4F8", letterSpacing: "-0.02em", marginBottom: "0.75rem" }}>
+            <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", fontWeight: 700, color: "#1A2740", letterSpacing: "-0.02em", marginBottom: "0.75rem" }}>
               What&apos;s Included in Your GEO Audit
             </h2>
-            <p style={{ color: "#94A3B8", fontSize: "1rem", lineHeight: 1.7, maxWidth: "52ch", margin: "0 auto" }}>
+            <p style={{ color: "#64748B", fontSize: "1rem", lineHeight: 1.7, maxWidth: "52ch", margin: "0 auto" }}>
               A comprehensive audit of your AI search presence — no fluff, no vague recommendations.
             </p>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(1, 1fr)", gap: "1.5rem" }} className="sm:grid-cols-2 lg:grid-cols-3">
             {FEATURES.map((f) => (
-              <div key={f.title} style={{ padding: "1.75rem", borderRadius: "1rem", backgroundColor: "rgba(26, 43, 74, 0.7)", border: "1px solid rgba(255,255,255,0.07)" }}>
-                <div style={{ color: "#2DD4BF", marginBottom: "1rem" }}>{f.icon}</div>
-                <h3 style={{ color: "#F0F4F8", fontWeight: 600, fontSize: "1rem", marginBottom: "0.5rem" }}>{f.title}</h3>
-                <p style={{ color: "#94A3B8", fontSize: "0.9rem", lineHeight: 1.65 }}>{f.body}</p>
+              <div key={f.title} style={{ padding: "1.75rem", borderRadius: "1rem", backgroundColor: "#FFFFFF", border: "1px solid #E8EFF4" }}>
+                <div style={{ backgroundColor: "#E6FAF8", width: "3rem", height: "3rem", borderRadius: "0.75rem", display: "flex", alignItems: "center", justifyContent: "center", color: "#2DD4BF", marginBottom: "1rem" }}>{f.icon}</div>
+                <h3 style={{ color: "#1A2740", fontWeight: 600, fontSize: "1rem", marginBottom: "0.5rem" }}>{f.title}</h3>
+                <p style={{ color: "#334155", fontSize: "0.9rem", lineHeight: 1.65 }}>{f.body}</p>
               </div>
             ))}
           </div>
@@ -172,19 +172,19 @@ export default function GEOAuditReportsPage() {
       </section>
 
       {/* How it works */}
-      <section style={{ backgroundColor: "#0F1D35", padding: "5rem 1.5rem" }}>
+      <section style={{ backgroundColor: "#F8FAFB", padding: "5rem 1.5rem" }}>
         <div style={{ maxWidth: "72rem", margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: "3rem" }}>
-            <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", fontWeight: 700, color: "#F0F4F8", letterSpacing: "-0.02em" }}>
+            <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", fontWeight: 700, color: "#1A2740", letterSpacing: "-0.02em" }}>
               Our GEO Audit Process
             </h2>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(1, 1fr)", gap: "1.5rem" }} className="sm:grid-cols-2 lg:grid-cols-4">
             {STEPS.map((step) => (
-              <div key={step.num} style={{ padding: "1.75rem", borderRadius: "1rem", backgroundColor: "#1A2B4A", border: "1px solid rgba(255,255,255,0.07)" }}>
-                <div style={{ color: "#E8A020", fontWeight: 800, fontSize: "1.5rem", marginBottom: "0.75rem" }}>{step.num}</div>
-                <h3 style={{ color: "#F0F4F8", fontWeight: 600, fontSize: "1rem", marginBottom: "0.5rem" }}>{step.title}</h3>
-                <p style={{ color: "#94A3B8", fontSize: "0.875rem", lineHeight: 1.65 }}>{step.body}</p>
+              <div key={step.num} style={{ padding: "1.75rem", borderRadius: "1rem", backgroundColor: "#F8FAFB", border: "1px solid #E8EFF4" }}>
+                <div style={{ color: "#C47A10", fontWeight: 800, fontSize: "1.5rem", marginBottom: "0.75rem" }}>{step.num}</div>
+                <h3 style={{ color: "#1A2740", fontWeight: 600, fontSize: "1rem", marginBottom: "0.5rem" }}>{step.title}</h3>
+                <p style={{ color: "#334155", fontSize: "0.875rem", lineHeight: 1.65 }}>{step.body}</p>
               </div>
             ))}
           </div>

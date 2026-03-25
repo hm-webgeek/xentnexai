@@ -104,22 +104,22 @@ export default function AILeadGenerationPage() {
       />
 
       {/* Features */}
-      <section style={{ backgroundColor: "#0F1D35", padding: "5rem 1.5rem" }}>
+      <section style={{ backgroundColor: "#F8FAFB", padding: "5rem 1.5rem" }}>
         <div style={{ maxWidth: "72rem", margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: "3rem" }}>
-            <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", fontWeight: 700, color: "#F0F4F8", letterSpacing: "-0.02em", marginBottom: "0.75rem" }}>
+            <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", fontWeight: 700, color: "#1A2740", letterSpacing: "-0.02em", marginBottom: "0.75rem" }}>
               Everything You Need to Fill Your Pipeline
             </h2>
-            <p style={{ color: "#94A3B8", fontSize: "1rem", lineHeight: 1.7, maxWidth: "52ch", margin: "0 auto" }}>
+            <p style={{ color: "#64748B", fontSize: "1rem", lineHeight: 1.7, maxWidth: "52ch", margin: "0 auto" }}>
               A complete AI lead generation system — from first click to booked appointment.
             </p>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(1, 1fr)", gap: "1.5rem" }} className="sm:grid-cols-2 lg:grid-cols-3">
             {FEATURES.map((f) => (
-              <div key={f.title} style={{ padding: "1.75rem", borderRadius: "1rem", backgroundColor: "rgba(26, 43, 74, 0.7)", border: "1px solid rgba(255,255,255,0.07)" }}>
-                <div style={{ color: "#2DD4BF", marginBottom: "1rem" }}>{f.icon}</div>
-                <h3 style={{ color: "#F0F4F8", fontWeight: 600, fontSize: "1rem", marginBottom: "0.5rem" }}>{f.title}</h3>
-                <p style={{ color: "#94A3B8", fontSize: "0.9rem", lineHeight: 1.65 }}>{f.body}</p>
+              <div key={f.title} style={{ padding: "1.75rem", borderRadius: "1rem", backgroundColor: "#FFFFFF", border: "1px solid #E8EFF4" }}>
+                <div style={{ backgroundColor: "#E6FAF8", width: "3rem", height: "3rem", borderRadius: "0.75rem", display: "flex", alignItems: "center", justifyContent: "center", color: "#2DD4BF", marginBottom: "1rem" }}>{f.icon}</div>
+                <h3 style={{ color: "#1A2740", fontWeight: 600, fontSize: "1rem", marginBottom: "0.5rem" }}>{f.title}</h3>
+                <p style={{ color: "#334155", fontSize: "0.9rem", lineHeight: 1.65 }}>{f.body}</p>
               </div>
             ))}
           </div>
@@ -127,19 +127,19 @@ export default function AILeadGenerationPage() {
       </section>
 
       {/* How it works */}
-      <section style={{ backgroundColor: "#0B1426", padding: "5rem 1.5rem" }}>
+      <section style={{ backgroundColor: "#FFFFFF", padding: "5rem 1.5rem" }}>
         <div style={{ maxWidth: "72rem", margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: "3rem" }}>
-            <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", fontWeight: 700, color: "#F0F4F8", letterSpacing: "-0.02em" }}>
+            <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", fontWeight: 700, color: "#1A2740", letterSpacing: "-0.02em" }}>
               How It Works
             </h2>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(1, 1fr)", gap: "1.5rem" }} className="sm:grid-cols-2 lg:grid-cols-4">
             {STEPS.map((step) => (
-              <div key={step.num} style={{ padding: "1.75rem", borderRadius: "1rem", backgroundColor: "#1A2B4A", border: "1px solid rgba(255,255,255,0.07)" }}>
-                <div style={{ color: "#E8A020", fontWeight: 800, fontSize: "1.5rem", marginBottom: "0.75rem", fontVariantNumeric: "tabular-nums" }}>{step.num}</div>
-                <h3 style={{ color: "#F0F4F8", fontWeight: 600, fontSize: "1rem", marginBottom: "0.5rem" }}>{step.title}</h3>
-                <p style={{ color: "#94A3B8", fontSize: "0.875rem", lineHeight: 1.65 }}>{step.body}</p>
+              <div key={step.num} style={{ padding: "1.75rem", borderRadius: "1rem", backgroundColor: "#F8FAFB", border: "1px solid #E8EFF4" }}>
+                <div style={{ color: "#C47A10", fontWeight: 800, fontSize: "1.5rem", marginBottom: "0.75rem", fontVariantNumeric: "tabular-nums" }}>{step.num}</div>
+                <h3 style={{ color: "#1A2740", fontWeight: 600, fontSize: "1rem", marginBottom: "0.5rem" }}>{step.title}</h3>
+                <p style={{ color: "#334155", fontSize: "0.875rem", lineHeight: 1.65 }}>{step.body}</p>
               </div>
             ))}
           </div>
@@ -147,14 +147,14 @@ export default function AILeadGenerationPage() {
       </section>
 
       {/* Who it's for */}
-      <section style={{ backgroundColor: "#0F1D35", padding: "4rem 1.5rem" }}>
+      <section style={{ backgroundColor: "#F8FAFB", padding: "4rem 1.5rem" }}>
         <div style={{ maxWidth: "72rem", margin: "0 auto", textAlign: "center" }}>
-          <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2rem)", fontWeight: 700, color: "#F0F4F8", letterSpacing: "-0.02em", marginBottom: "2rem" }}>
+          <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2rem)", fontWeight: 700, color: "#1A2740", letterSpacing: "-0.02em", marginBottom: "2rem" }}>
             Built for Sunshine Coast Industries
           </h2>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem", justifyContent: "center" }}>
             {INDUSTRIES.map((ind) => (
-              <span key={ind} style={{ padding: "0.5rem 1.125rem", borderRadius: "9999px", border: "1px solid rgba(232, 160, 32, 0.3)", backgroundColor: "rgba(232, 160, 32, 0.08)", color: "#E8A020", fontSize: "0.875rem", fontWeight: 500 }}>
+              <span key={ind} style={{ padding: "0.5rem 1.125rem", borderRadius: "9999px", border: "1px solid rgba(196, 122, 16, 0.25)", backgroundColor: "#FEF6E4", color: "#C47A10", fontSize: "0.875rem", fontWeight: 500 }}>
                 {ind}
               </span>
             ))}
