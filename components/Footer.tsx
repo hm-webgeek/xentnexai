@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Logo from "@/components/Logo";
 
 const QUICK_LINKS = [
   { label: "Home", href: "/" },
@@ -31,17 +32,8 @@ export default function Footer() {
         >
           {/* Col 1: Brand */}
           <div>
-            <div
-              style={{
-                fontFamily: "var(--font-display, ui-sans-serif, system-ui, sans-serif)",
-                fontWeight: 700,
-                fontSize: "1.25rem",
-                marginBottom: "0.75rem",
-                letterSpacing: "-0.02em",
-                color: "#F0F4F8",
-              }}
-            >
-              Xentnex<span style={{ color: "#2DD4BF" }}>AI</span>
+            <div style={{ marginBottom: "0.75rem" }}>
+              <Logo variant="dark" height={36} />
             </div>
             <p style={{ color: "#94A3B8", fontSize: "0.875rem", lineHeight: "1.6", maxWidth: "22ch" }}>
               AI services built for Sunshine Coast businesses. Automate, grow, and get found.

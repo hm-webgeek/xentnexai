@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { CALENDLY_URL } from "@/lib/metadata";
+import Logo from "@/components/Logo";
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },
@@ -10,26 +11,6 @@ const NAV_LINKS = [
   { label: "AI Voice Agents", href: "/ai-voice-agents" },
   { label: "GEO Audit Reports", href: "/geo-audit-reports" },
 ];
-
-function LogoMark() {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="32" height="32" aria-hidden="true">
-      <circle fill="none" stroke="#2DD4BF" strokeWidth="2.5" cx="40" cy="40" r="30" strokeDasharray="160 29" strokeDashoffset="10" />
-      <line stroke="#2DD4BF" strokeWidth="2" strokeLinecap="round" x1="40" y1="40" x2="40" y2="14" />
-      <line stroke="#2DD4BF" strokeWidth="2" strokeLinecap="round" x1="40" y1="40" x2="61" y2="22" />
-      <line stroke="#2DD4BF" strokeWidth="2" strokeLinecap="round" x1="40" y1="40" x2="63" y2="53" />
-      <line stroke="#2DD4BF" strokeWidth="1.5" strokeLinecap="round" x1="40" y1="40" x2="20" y2="58" opacity="0.45" />
-      <line stroke="#2DD4BF" strokeWidth="1.5" strokeLinecap="round" x1="40" y1="40" x2="11" y2="32" opacity="0.45" />
-      <circle fill="#2DD4BF" cx="40" cy="13" r="4.5" />
-      <circle fill="#2DD4BF" cx="62" cy="21" r="4.5" />
-      <circle fill="#2DD4BF" cx="64" cy="54" r="4.5" />
-      <circle fill="#1BA899" cx="19" cy="59" r="3.5" opacity="0.55" />
-      <circle fill="#1BA899" cx="10" cy="31" r="3.5" opacity="0.55" />
-      <circle fill="#1A2740" cx="40" cy="40" r="7" />
-      <circle fill="#2DD4BF" cx="40" cy="40" r="4.5" />
-    </svg>
-  );
-}
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -57,27 +38,8 @@ export default function Header() {
         }}
       >
         {/* Logo */}
-        <Link
-          href="/"
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "0.625rem",
-            textDecoration: "none",
-          }}
-        >
-          <LogoMark />
-          <span
-            style={{
-              fontFamily: "var(--font-display, ui-sans-serif, system-ui, sans-serif)",
-              fontWeight: 700,
-              fontSize: "1.125rem",
-              letterSpacing: "-0.02em",
-              color: "#1A2740",
-            }}
-          >
-            Xentnex<span style={{ color: "#2DD4BF" }}>AI</span>
-          </span>
+        <Link href="/" style={{ textDecoration: "none", display: "flex" }}>
+          <Logo variant="light" height={36} />
         </Link>
 
         {/* Desktop nav */}
