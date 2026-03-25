@@ -57,13 +57,13 @@ const WHY_LOCAL = [
 
 export default function LocalSEOSection() {
   return (
-    <section style={{ backgroundColor: "#0F1D35", padding: "5rem 1.5rem" }}>
+    <section style={{ backgroundColor: "#F8FAFB", padding: "5rem 1.5rem" }}>
       <div style={{ maxWidth: "72rem", margin: "0 auto" }}>
         {/* Heading */}
         <div style={{ textAlign: "center", marginBottom: "3.5rem" }}>
           <p
             style={{
-              color: "#2DD4BF",
+              color: "#1BA899",
               fontSize: "0.875rem",
               fontWeight: 600,
               textTransform: "uppercase",
@@ -77,7 +77,7 @@ export default function LocalSEOSection() {
             style={{
               fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)",
               fontWeight: 700,
-              color: "#F0F4F8",
+              color: "#1A2740",
               letterSpacing: "-0.02em",
               marginBottom: "1rem",
             }}
@@ -86,7 +86,7 @@ export default function LocalSEOSection() {
           </h2>
           <p
             style={{
-              color: "#94A3B8",
+              color: "#64748B",
               fontSize: "1rem",
               maxWidth: "52ch",
               margin: "0 auto",
@@ -115,8 +115,8 @@ export default function LocalSEOSection() {
                 padding: "0.375rem 0.875rem",
                 borderRadius: "9999px",
                 border: "1px solid rgba(45, 212, 191, 0.25)",
-                backgroundColor: "rgba(45, 212, 191, 0.06)",
-                color: "#94A3B8",
+                backgroundColor: "#E6FAF8",
+                color: "#64748B",
                 fontSize: "0.8125rem",
                 fontWeight: 500,
               }}
@@ -141,8 +141,8 @@ export default function LocalSEOSection() {
               style={{
                 padding: "1.75rem",
                 borderRadius: "1rem",
-                backgroundColor: "rgba(26, 43, 74, 0.6)",
-                border: "1px solid rgba(255, 255, 255, 0.07)",
+                backgroundColor: "#FFFFFF",
+                border: "1px solid #E8EFF4",
               }}
             >
               <div
@@ -155,7 +155,7 @@ export default function LocalSEOSection() {
               </div>
               <h3
                 style={{
-                  color: "#F0F4F8",
+                  color: "#1A2740",
                   fontWeight: 600,
                   fontSize: "1rem",
                   marginBottom: "0.5rem",
@@ -163,7 +163,7 @@ export default function LocalSEOSection() {
               >
                 {item.title}
               </h3>
-              <p style={{ color: "#94A3B8", fontSize: "0.9rem", lineHeight: 1.65 }}>
+              <p style={{ color: "#334155", fontSize: "0.9rem", lineHeight: 1.65 }}>
                 {item.body}
               </p>
             </div>

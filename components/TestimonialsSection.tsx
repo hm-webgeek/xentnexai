@@ -24,13 +24,13 @@ const TESTIMONIALS = [
 
 export default function TestimonialsSection() {
   return (
-    <section style={{ backgroundColor: "#0B1426", padding: "5rem 1.5rem" }}>
+    <section style={{ backgroundColor: "#FFFFFF", padding: "5rem 1.5rem" }}>
       <div style={{ maxWidth: "72rem", margin: "0 auto" }}>
         {/* Heading */}
         <div style={{ textAlign: "center", marginBottom: "3rem" }}>
           <p
             style={{
-              color: "#2DD4BF",
+              color: "#1BA899",
               fontSize: "0.875rem",
               fontWeight: 600,
               textTransform: "uppercase",
@@ -44,7 +44,7 @@ export default function TestimonialsSection() {
             style={{
               fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)",
               fontWeight: 700,
-              color: "#F0F4F8",
+              color: "#1A2740",
               letterSpacing: "-0.02em",
             }}
           >
@@ -65,8 +65,8 @@ export default function TestimonialsSection() {
             <div
               key={t.name}
               style={{
-                backgroundColor: "#1A2B4A",
-                border: "1px solid rgba(255, 255, 255, 0.08)",
+                backgroundColor: "#F8FAFB",
+                border: "1px solid #E8EFF4",
                 borderRadius: "1rem",
                 padding: "1.75rem",
                 display: "flex",
@@ -86,7 +86,7 @@ export default function TestimonialsSection() {
               {/* Quote */}
               <blockquote
                 style={{
-                  color: "#94A3B8",
+                  color: "#334155",
                   fontSize: "0.9375rem",
                   lineHeight: 1.7,
                   fontStyle: "italic",
@@ -99,10 +99,10 @@ export default function TestimonialsSection() {
 
               {/* Attribution */}
               <div>
-                <p style={{ color: "#F0F4F8", fontWeight: 600, fontSize: "0.9rem", margin: 0 }}>
+                <p style={{ color: "#1A2740", fontWeight: 600, fontSize: "0.9rem", margin: 0 }}>
                   {t.name}
                 </p>
-                <p style={{ color: "#94A3B8", fontSize: "0.8125rem", margin: "0.125rem 0 0" }}>
+                <p style={{ color: "#64748B", fontSize: "0.8125rem", margin: "0.125rem 0 0" }}>
                   {t.business} · {t.suburb}
                 </p>
               </div>
