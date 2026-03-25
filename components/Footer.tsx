@@ -25,35 +25,30 @@ export default function Footer() {
           padding: "4rem 1.5rem 2rem",
         }}
       >
-        {/* 3-col grid */}
+        {/* 3-col grid — className only, no conflicting inline gridTemplateColumns */}
         <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(1, 1fr)",
-            gap: "3rem",
-            marginBottom: "3rem",
-          }}
-          className="sm:grid-cols-3"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-12 mb-12"
         >
           {/* Col 1: Brand */}
           <div>
             <div
               style={{
+                fontFamily: "var(--font-display, ui-sans-serif, system-ui, sans-serif)",
                 fontWeight: 700,
                 fontSize: "1.25rem",
                 marginBottom: "0.75rem",
                 letterSpacing: "-0.02em",
+                color: "#F0F4F8",
               }}
             >
-              <span style={{ color: "#E8A020" }}>Xentnex</span>
-              <span style={{ color: "#2DD4BF" }}>AI</span>
+              Xentnex<span style={{ color: "#2DD4BF" }}>AI</span>
             </div>
             <p style={{ color: "#94A3B8", fontSize: "0.875rem", lineHeight: "1.6", maxWidth: "22ch" }}>
               AI services built for Sunshine Coast businesses. Automate, grow, and get found.
             </p>
           </div>
 
-          {/* Col 2: Quick links */}
+          {/* Col 2: Services */}
           <div>
             <h3
               style={{
@@ -62,7 +57,7 @@ export default function Footer() {
                 fontSize: "0.875rem",
                 marginBottom: "1rem",
                 textTransform: "uppercase",
-                letterSpacing: "0.05em",
+                letterSpacing: "0.06em",
               }}
             >
               Services
@@ -97,7 +92,7 @@ export default function Footer() {
                 fontSize: "0.875rem",
                 marginBottom: "1rem",
                 textTransform: "uppercase",
-                letterSpacing: "0.05em",
+                letterSpacing: "0.06em",
               }}
             >
               Contact
@@ -107,16 +102,24 @@ export default function Footer() {
                 fontStyle: "normal",
                 color: "#94A3B8",
                 fontSize: "0.875rem",
-                lineHeight: "1.8",
+                lineHeight: "1.9",
               }}
             >
               <a
-                href="mailto:hello@xentnexai.com.au"
+                href="mailto:info@xentnexai.com.au"
                 style={{ color: "#94A3B8", textDecoration: "none", display: "block" }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = "#2DD4BF")}
                 onMouseLeave={(e) => (e.currentTarget.style.color = "#94A3B8")}
               >
-                hello@xentnexai.com.au
+                info@xentnexai.com.au
+              </a>
+              <a
+                href="tel:0752215504"
+                style={{ color: "#94A3B8", textDecoration: "none", display: "block" }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#2DD4BF")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "#94A3B8")}
+              >
+                (07) 5221 5504
               </a>
               <span style={{ display: "block" }}>Sunshine Coast</span>
               <span style={{ display: "block" }}>Queensland, Australia</span>
@@ -126,16 +129,12 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div
+          className="flex flex-col sm:flex-row sm:justify-between items-center gap-2"
           style={{
             borderTop: "1px solid rgba(255, 255, 255, 0.08)",
             paddingTop: "1.5rem",
-            display: "flex",
-            flexDirection: "column",
-            gap: "0.5rem",
-            alignItems: "center",
             textAlign: "center",
           }}
-          className="sm:flex-row sm:justify-between"
         >
           <p style={{ color: "#94A3B8", fontSize: "0.8125rem" }}>
             © 2025 XentnexAI. All rights reserved.
