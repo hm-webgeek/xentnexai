@@ -9,6 +9,7 @@ const NAV_LINKS = [
   { label: "AI Lead Generation", href: "/ai-lead-generation" },
   { label: "AI Voice Agents", href: "/ai-voice-agents" },
   { label: "GEO Audit Reports", href: "/geo-audit-reports" },
+  { label: "AI News", href: "/ai-news" },
 ];
 
 export default function Header() {
