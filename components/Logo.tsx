@@ -7,6 +7,8 @@ export default function Logo({ variant = "light", height = 40 }: LogoProps) {
   const wordmarkFill = variant === "dark" ? "#FFFFFF" : "#1A2740";
   const taglineFill = variant === "dark" ? "#94A3B8" : "#64748B";
   const centralNodeFill = variant === "dark" ? "#0B1426" : "#1A2740";
+  // Ring is ink (#1A2740) on light — swap to white on dark so it's visible against navy
+  const ringStroke = variant === "dark" ? "#FFFFFF" : "#1A2740";
 
   // viewBox 480x90 — icon centred at (45,45), wordmark starts x=95
   const width = height * (480 / 90);
@@ -23,7 +25,8 @@ export default function Logo({ variant = "light", height = 40 }: LogoProps) {
       <title>XentneXAI</title>
 
       {/* Icon mark — nexus node cluster, centre (45,45) r=30 */}
-      <circle fill="none" stroke="#2DD4BF" strokeWidth="2.5" cx="45" cy="45" r="30" strokeDasharray="160 29" strokeDashoffset="10" />
+      {/* Outer ring: ink on light, white on dark */}
+      <circle fill="none" stroke={ringStroke} strokeWidth="2.5" cx="45" cy="45" r="30" strokeDasharray="160 29" strokeDashoffset="10" />
 
       {/* Spokes */}
       <line stroke="#2DD4BF" strokeWidth="2" strokeLinecap="round" x1="45" y1="45" x2="45" y2="19" />
@@ -44,7 +47,7 @@ export default function Logo({ variant = "light", height = 40 }: LogoProps) {
       <circle fill="#2DD4BF" cx="45" cy="45" r="4.5" />
 
       {/* Wordmark — Orbitron 700, both X's capitalised */}
-      <text y="56" dominantBaseline="auto">
+      <text y="51" dominantBaseline="auto">
         <tspan
           x="95"
           fontFamily="var(--font-orbitron, 'Orbitron', sans-serif)"
@@ -69,7 +72,7 @@ export default function Logo({ variant = "light", height = 40 }: LogoProps) {
         fill={taglineFill}
         letterSpacing="1.5"
         x="95"
-        y="76"
+        y="67"
       >
         SUNSHINE COAST AI SERVICES
       </text>

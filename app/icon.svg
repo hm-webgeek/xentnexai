@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80">
   <!-- Outer ring (partial arc) -->
-  <circle fill="none" stroke="#2DD4BF" stroke-width="2.5" cx="40" cy="40" r="30" stroke-dasharray="160 29" stroke-dashoffset="10" />
+  <circle fill="none" stroke="#1A2740" stroke-width="2.5" cx="40" cy="40" r="30" stroke-dasharray="160 29" stroke-dashoffset="10" />
   <!-- Spokes -->
   <line stroke="#2DD4BF" stroke-width="2" stroke-linecap="round" x1="40" y1="40" x2="40" y2="14" />
   <line stroke="#2DD4BF" stroke-width="2" stroke-linecap="round" x1="40" y1="40" x2="61" y2="22" />
