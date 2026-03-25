@@ -39,7 +39,7 @@ export default function Header() {
       >
         {/* Logo */}
         <Link href="/" style={{ textDecoration: "none", display: "flex" }}>
-          <Logo variant="light" height={36} />
+          <Logo variant="light" height={45} />
         </Link>
 
         {/* Desktop nav */}

@@ -33,7 +33,7 @@ export default function Footer() {
           {/* Col 1: Brand */}
           <div>
             <div style={{ marginBottom: "0.75rem" }}>
-              <Logo variant="dark" height={36} />
+              <Logo variant="dark" height={45} />
             </div>
             <p style={{ color: "#94A3B8", fontSize: "0.875rem", lineHeight: "1.6", maxWidth: "22ch" }}>
               AI services built for Sunshine Coast businesses. Automate, grow, and get found.
