@@ -28,6 +28,10 @@ export default function Footer() {
         backgroundColor: "#0B1426",
         borderTop: "1px solid rgba(255, 255, 255, 0.08)",
         marginTop: "auto",
+        backgroundImage: "url('/images/xentnexai-footer-banner.svg')",
+        backgroundSize: "cover",
+        backgroundPosition: "bottom left",
+        backgroundRepeat: "no-repeat",
       }}
     >
       <div

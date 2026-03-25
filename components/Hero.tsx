@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { CALENDLY_URL } from "@/lib/metadata";
 
 export default function Hero() {
@@ -62,8 +63,15 @@ export default function Hero() {
           margin: "0 auto",
           padding: "6rem 1.5rem",
           width: "100%",
+          display: "grid",
+          gridTemplateColumns: "1fr",
+          gap: "3rem",
+          alignItems: "center",
         }}
+        className="lg:grid-cols-2"
       >
+        {/* Left: text */}
+        <div>
         {/* Badge */}
         <div
           style={{
@@ -165,33 +173,30 @@ export default function Hero() {
             fontSize: "0.875rem",
           }}
         >
-          {[
-            "AI Lead Generation",
-            "AI Voice Agents",
-            "GEO Audit Reports",
-          ].map((item) => (
-            <div
-              key={item}
-              style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}
-            >
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                style={{ color: "#2DD4BF", flexShrink: 0 }}
-              >
-                <path
-                  d="M3 8l3.5 3.5L13 4.5"
-                  stroke="currentColor"
-                  strokeWidth="1.75"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
+          {["AI Lead Generation", "AI Voice Agents", "GEO Audit Reports"].map((item) => (
+            <div key={item} style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ color: "#2DD4BF", flexShrink: 0 }}>
+                <path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
               {item}
             </div>
           ))}
+        </div>
+        </div>{/* end left col */}
+
+        {/* Right: hero image */}
+        <div
+          className="hidden lg:block"
+          style={{ position: "relative", borderRadius: "1rem", overflow: "hidden", boxShadow: "0 24px 64px rgba(0,0,0,0.4)" }}
+        >
+          <Image
+            src="/images/xentnexai-hero-homepage.png"
+            alt="Sunshine Coast business owner using AI tools"
+            width={1280}
+            height={720}
+            style={{ width: "100%", height: "auto", display: "block" }}
+            priority
+          />
         </div>
       </div>
     </section>

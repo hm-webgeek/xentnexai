@@ -101,6 +101,7 @@ export default function AIVoiceAgentsPage() {
         badge="Sunshine Coast AI Service"
         title="AI Voice Agents That Answer Every Call"
         subtitle="Every missed call is a missed opportunity. Our AI voice agents answer instantly, qualify prospects, and book appointments — 24 hours a day, 7 days a week."
+        image={{ src: "/images/xentnexai-hero-voice.png", alt: "AI voice agent answering calls after hours", width: 1280, height: 640 }}
       />
 
       {/* Features */}
