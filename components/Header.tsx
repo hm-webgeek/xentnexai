@@ -6,7 +6,6 @@ import { CALENDLY_URL } from "@/lib/metadata";
 import Logo from "@/components/Logo";
 
 const NAV_LINKS = [
-  { label: "Home", href: "/" },
   { label: "AI Lead Generation", href: "/ai-lead-generation" },
   { label: "AI Voice Agents", href: "/ai-voice-agents" },
   { label: "GEO Audit Reports", href: "/geo-audit-reports" },
@@ -30,7 +29,7 @@ export default function Header() {
         style={{
           maxWidth: "72rem",
           margin: "0 auto",
-          padding: "0 1.5rem",
+          padding: "0.3125rem 1.5rem",
           height: "4rem",
           display: "flex",
           alignItems: "center",
