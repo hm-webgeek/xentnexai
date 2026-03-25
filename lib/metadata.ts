@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const BASE_URL = "https://xentnexai.com.au";
 export const CALENDLY_URL = "https://calendly.com/xentnexai";
-export const FORMSPREE_ID = "YOUR_FORMSPREE_ID"; // Replace with your Formspree form ID
+export const FORMSPREE_ID = "xlgorlke";
 
 export const SITE_NAME = "XentnexAI";
 export const DEFAULT_DESCRIPTION =
