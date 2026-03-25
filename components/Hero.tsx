@@ -13,19 +13,27 @@ export default function Hero() {
         backgroundColor: "#0B1426",
       }}
     >
-      {/* Dot grid background */}
+      {/* Full-width background image */}
+      <Image
+        src="/images/xentnexai-hero-homepage.png"
+        alt=""
+        fill
+        style={{ objectFit: "cover", objectPosition: "center" }}
+        priority
+        aria-hidden="true"
+      />
+
+      {/* Dark overlay for text legibility */}
       <div
         style={{
           position: "absolute",
           inset: 0,
-          backgroundImage:
-            "radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px)",
-          backgroundSize: "32px 32px",
+          background: "linear-gradient(to right, rgba(11,20,38,0.92) 40%, rgba(11,20,38,0.55) 100%)",
           pointerEvents: "none",
         }}
       />
 
-      {/* Gradient orb — teal, top right */}
+      {/* Teal orb */}
       <div
         style={{
           position: "absolute",
@@ -34,23 +42,7 @@ export default function Hero() {
           width: "40rem",
           height: "40rem",
           borderRadius: "50%",
-          background:
-            "radial-gradient(circle, rgba(45, 212, 191, 0.18) 0%, transparent 70%)",
-          pointerEvents: "none",
-        }}
-      />
-
-      {/* Gradient orb — gold, bottom left */}
-      <div
-        style={{
-          position: "absolute",
-          bottom: "-8rem",
-          left: "-8rem",
-          width: "30rem",
-          height: "30rem",
-          borderRadius: "50%",
-          background:
-            "radial-gradient(circle, rgba(232, 160, 32, 0.12) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(45, 212, 191, 0.12) 0%, transparent 70%)",
           pointerEvents: "none",
         }}
       />
@@ -63,15 +55,8 @@ export default function Hero() {
           margin: "0 auto",
           padding: "6rem 1.5rem",
           width: "100%",
-          display: "grid",
-          gridTemplateColumns: "1fr",
-          gap: "3rem",
-          alignItems: "center",
         }}
-        className="lg:grid-cols-2"
       >
-        {/* Left: text */}
-        <div>
         {/* Badge */}
         <div
           style={{
@@ -88,15 +73,7 @@ export default function Hero() {
             marginBottom: "1.75rem",
           }}
         >
-          <span
-            style={{
-              width: "6px",
-              height: "6px",
-              borderRadius: "50%",
-              backgroundColor: "#2DD4BF",
-              display: "inline-block",
-            }}
-          />
+          <span style={{ width: "6px", height: "6px", borderRadius: "50%", backgroundColor: "#2DD4BF", display: "inline-block" }} />
           Sunshine Coast&apos;s AI Agency
         </div>
 
@@ -133,28 +110,11 @@ export default function Hero() {
         </p>
 
         {/* CTAs */}
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "1rem",
-          }}
-        >
-          <a
-            href={CALENDLY_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary"
-          >
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
+          <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="btn-primary">
             Book a Free Strategy Call
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path
-                d="M3 8h10M9 4l4 4-4 4"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </a>
           <a href="#services" className="btn-secondary">
@@ -181,22 +141,6 @@ export default function Hero() {
               {item}
             </div>
           ))}
-        </div>
-        </div>{/* end left col */}
-
-        {/* Right: hero image */}
-        <div
-          className="hidden lg:block"
-          style={{ position: "relative", borderRadius: "1rem", overflow: "hidden", boxShadow: "0 24px 64px rgba(0,0,0,0.4)" }}
-        >
-          <Image
-            src="/images/xentnexai-hero-homepage.png"
-            alt="Sunshine Coast business owner using AI tools"
-            width={1280}
-            height={720}
-            style={{ width: "100%", height: "auto", display: "block" }}
-            priority
-          />
         </div>
       </div>
     </section>
