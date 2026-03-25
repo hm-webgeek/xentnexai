@@ -37,17 +37,6 @@ export default function ContactForm() {
     const form = e.currentTarget;
     const data = new FormData(form);
 
-    // Fallback to mailto if Formspree ID not configured
-    if (FORMSPREE_ID === "YOUR_FORMSPREE_ID") {
-      const subject = encodeURIComponent("XentnexAI Enquiry");
-      const body = encodeURIComponent(
-        `Name: ${data.get("name")}\nBusiness: ${data.get("business")}\nEmail: ${data.get("email")}\nPhone: ${data.get("phone")}\nService: ${data.get("service")}\n\n${data.get("message")}`
-      );
-      window.location.href = `mailto:hello@xentnexai.com.au?subject=${subject}&body=${body}`;
-      setState("idle");
-      return;
-    }
-
     try {
       const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
         method: "POST",
