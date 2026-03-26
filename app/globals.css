@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Orbitron';
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  src: url('/fonts/orbitron.woff2') format('woff2');
+}
+
 @theme inline {
   --color-brand-teal:        #2DD4BF;
   --color-brand-teal-dark:   #1BA899;
@@ -30,7 +38,11 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2 {
+  font-family: 'Orbitron', var(--font-display, ui-sans-serif, system-ui, sans-serif);
+}
+
+h3, h4, h5, h6 {
   font-family: var(--font-display, ui-sans-serif, system-ui, sans-serif);
 }
 

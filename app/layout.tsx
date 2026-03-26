@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Inter, Orbitron } from "next/font/google";
+import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -15,12 +15,6 @@ const inter = Inter({
   variable: "--font-body",
   subsets: ["latin"],
   weight: ["400", "500", "600"],
-});
-
-const orbitron = Orbitron({
-  variable: "--font-orbitron",
-  subsets: ["latin"],
-  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
@@ -45,7 +39,7 @@ export default function RootLayout({
   return (
     <html
       lang="en-AU"
-      className={`${plusJakartaSans.variable} ${inter.variable} ${orbitron.variable} h-full`}
+      className={`${plusJakartaSans.variable} ${inter.variable} h-full`}
     >
       <body className="min-h-full flex flex-col">
         <Header />
