@@ -45,7 +45,7 @@ export default function Header() {
 
           {/* Desktop nav */}
           <nav
-            style={{ display: "flex", alignItems: "center", gap: "2rem" }}
+            style={{ alignItems: "center", gap: "2rem" }}
             className="hidden md:flex"
           >
             {NAV_LINKS.map((link) => (

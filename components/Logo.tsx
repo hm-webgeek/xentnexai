@@ -8,7 +8,7 @@ export default function Logo({ variant = "light", height = 40, showIcon = true }
   const wordmarkFill = variant === "dark" ? "#FFFFFF" : "#1A2740";
   const taglineFill = variant === "dark" ? "#94A3B8" : "#64748B";
   const centralNodeFill = variant === "dark" ? "#0B1426" : "#1A2740";
-  const ringStroke = variant === "dark" ? "#FFFFFF" : "#1A2740";
+  const nodeFill = variant === "dark" ? "#FFFFFF" : "#1A2740";
 
   // Wordmark-only: viewBox 320x98, text starts x=10
   // With icon: viewBox 480x98, text starts x=95
@@ -23,24 +23,23 @@ export default function Logo({ variant = "light", height = 40, showIcon = true }
       width={width}
       height={height}
       role="img"
-      aria-label="XentneXAI logo"
+      aria-label="XentnexAI logo"
     >
-      <title>XentneXAI</title>
+      <title>XentnexAI</title>
 
-      {/* Icon mark — nexus node cluster, centre (45,45) r=30 */}
+      {/* Icon mark — nexus node cluster, centre (45,45), logo-011: no outer ring, nodes are dark/inverted */}
       {showIcon && (
         <>
-          <circle fill="none" stroke={ringStroke} strokeWidth="2.5" cx="45" cy="45" r="30" strokeDasharray="160 29" strokeDashoffset="10" />
           <line stroke="#2DD4BF" strokeWidth="2" strokeLinecap="round" x1="45" y1="45" x2="45" y2="19" />
           <line stroke="#2DD4BF" strokeWidth="2" strokeLinecap="round" x1="45" y1="45" x2="65" y2="28" />
           <line stroke="#2DD4BF" strokeWidth="2" strokeLinecap="round" x1="45" y1="45" x2="68" y2="58" />
-          <line stroke="#2DD4BF" strokeWidth="1.5" strokeLinecap="round" x1="45" y1="45" x2="26" y2="62" opacity="0.45" />
-          <line stroke="#2DD4BF" strokeWidth="1.5" strokeLinecap="round" x1="45" y1="45" x2="20" y2="37" opacity="0.45" />
-          <circle fill="#2DD4BF" cx="45" cy="19" r="4.5" />
-          <circle fill="#2DD4BF" cx="65" cy="28" r="4.5" />
-          <circle fill="#2DD4BF" cx="68" cy="58" r="4.5" />
-          <circle fill="#1BA899" cx="26" cy="62" r="3.5" opacity="0.55" />
-          <circle fill="#1BA899" cx="20" cy="37" r="3.5" opacity="0.55" />
+          <line stroke="#2DD4BF" strokeWidth="1.5" strokeLinecap="round" x1="45" y1="45" x2="26" y2="62" />
+          <line stroke="#2DD4BF" strokeWidth="1.5" strokeLinecap="round" x1="45" y1="45" x2="20" y2="37" />
+          <circle fill={nodeFill} cx="45" cy="19" r="4.5" />
+          <circle fill={nodeFill} cx="65" cy="28" r="4.5" />
+          <circle fill={nodeFill} cx="68" cy="58" r="4.5" />
+          <circle fill={nodeFill} cx="26" cy="62" r="3.5" />
+          <circle fill={nodeFill} cx="20" cy="37" r="3.5" />
           <circle fill={centralNodeFill} cx="45" cy="45" r="7" />
           <circle fill="#2DD4BF" cx="45" cy="45" r="4.5" />
         </>
@@ -67,7 +66,7 @@ export default function Logo({ variant = "light", height = 40, showIcon = true }
       {/* Tagline */}
       <text
         fontFamily="var(--font-orbitron, 'Orbitron', sans-serif)"
-        fontWeight="400"
+        fontWeight="700"
         fontSize="14"
         fill={taglineFill}
         letterSpacing="1.5"
