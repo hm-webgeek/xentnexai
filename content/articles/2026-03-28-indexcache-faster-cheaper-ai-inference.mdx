@@ -1,0 +1,44 @@
+---
+title: "New AI Research Cuts Inference Costs in Half — What It Means for Your AI Tools"
+date: "2026-03-28"
+category: "industry-news"
+summary: "Researchers from Tsinghua University and Z.ai have developed IndexCache, a technique that makes long-context AI models up to 1.82 times faster by reusing attention calculations across model layers. The innovation requires no retraining and is already being applied to production AI systems, with implications for the cost and speed of AI services businesses rely on."
+heroImage: "/images/articles/2026-03-28-indexcache-faster-cheaper-ai-inference.png"
+sources:
+  - url: "https://venturebeat.com/technology/indexcache-a-new-sparse-attention-optimizer-delivers-1-82x-faster-inference"
+    title: "IndexCache, a new sparse attention optimizer, delivers 1.82x faster inference on long-context AI models | VentureBeat"
+  - url: "https://arxiv.org/abs/2603.12201"
+    title: "IndexCache: Accelerating Sparse Attention via Cross-Layer Index Reuse — arXiv"
+---
+
+You do not need to understand how transformer attention mechanisms work to care about what a team of researchers just published. The short version is this: they found a way to make AI models process long documents up to 1.82 times faster, at roughly half the computational cost — without changing the model or retraining anything. That kind of improvement has direct implications for the AI-powered tools businesses use every day.
+
+## The Problem They Solved
+
+Modern AI language models work by paying attention to every relevant word in a document when generating a response. For long documents — contracts, reports, chat histories, large datasets — this becomes extremely expensive to compute. As context windows have grown (some models now handle hundreds of thousands of words at once), the cost of that attention computation has grown with them.
+
+A technique called sparse attention was already helping with this, by having the model focus only on the most relevant tokens rather than every single word. But even that had a bottleneck: calculating *which* tokens were most relevant had to happen independently at every layer of the model, adding up to 81% of the total processing time for very long documents.
+
+## The IndexCache Solution
+
+Researchers from Tsinghua University and Z.ai noticed something: the set of important tokens that a model pays attention to is remarkably consistent from one layer to the next. Adjacent layers share 70–100% of their selected tokens. So why recalculate from scratch every time?
+
+IndexCache divides the model's layers into a small number of "Full" layers that do their own attention calculations, and a majority of "Shared" layers that simply reuse the results from the nearest Full layer. The implementation requires, in the researchers' words, "one if/else branch, zero extra GPU memory."
+
+The results are significant: up to 75% reduction in indexer computations, 1.82 times faster processing of long documents, and 1.48 times faster response generation — with no meaningful degradation in output quality.
+
+## It Is Already in Production Systems
+
+IndexCache is not theoretical. The researchers have published patches for SGLang and vLLM — two of the most widely used frameworks for deploying AI models — and the technique has been validated on DeepSeek-V3.2 and GLM-5, a 744-billion-parameter model. On that larger model, real-world end-to-end speed improved by around 1.2 times with no quality loss on either long-context or reasoning tasks.
+
+This is the kind of infrastructure improvement that filters through to every service built on top of these models. When inference gets faster and cheaper, API pricing tends to follow.
+
+## What This Means for Sunshine Coast Businesses
+
+Most businesses do not interact with AI infrastructure directly — they use products built on top of it. But improvements like IndexCache have practical downstream effects worth understanding.
+
+AI tools that handle long documents — contract review, meeting transcription and summarisation, customer conversation analysis, lengthy report drafting — are among those that benefit most from faster long-context processing. If you are currently using AI tools that feel slow when handling large documents, the underlying technology is improving rapidly.
+
+From a cost perspective, the AI API market is becoming increasingly competitive, and infrastructure improvements are a key driver of price reductions. Businesses paying per-token fees for AI services should expect continued downward pressure on pricing as these optimisations reach production.
+
+The broader point is that AI capabilities are not static. What seems like a limitation today — slow processing of long documents, high per-query costs — is being actively engineered away. For Sunshine Coast businesses in early stages of evaluating AI tools, the landscape you are evaluating now will look materially different in twelve months. Building flexibility into any AI investment, rather than locking into long-term contracts, is a sensible approach while the underlying technology continues to improve this quickly.
