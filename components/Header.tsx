@@ -184,7 +184,7 @@ export default function Header() {
           target="_blank"
           rel="noopener noreferrer"
           className="btn-primary"
-          style={{ textAlign: "center", marginTop: "2rem" }}
+          style={{ display: "flex", justifyContent: "center", marginTop: "2rem" }}
           onClick={() => setOpen(false)}
         >
           Book a Free Call
