@@ -102,6 +102,7 @@ export default function AILeadGenerationPage() {
         title="AI Lead Generation for Sunshine Coast Businesses"
         subtitle="Stop chasing cold leads. Our AI systems capture qualified prospects automatically — 24 hours a day, 7 days a week — so your sales pipeline is always full."
         image={{ src: "/images/xentnexai-hero-lead-gen.png", alt: "AI lead generation network illustration", width: 1280, height: 640 }}
+        imageMobile={{ src: "/images/xentnexai-hero-lead-gen-mobile.webp" }}
       />
 
       {/* Features */}

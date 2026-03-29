@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { CALENDLY_URL } from "@/lib/metadata";
 
 interface ServiceHeroProps {
@@ -6,9 +5,10 @@ interface ServiceHeroProps {
   title: string;
   subtitle: string;
   image?: { src: string; alt: string; width: number; height: number };
+  imageMobile?: { src: string };
 }
 
-export default function ServiceHero({ badge, title, subtitle, image }: ServiceHeroProps) {
+export default function ServiceHero({ badge, title, subtitle, image, imageMobile }: ServiceHeroProps) {
   return (
     <section
       style={{
@@ -20,16 +20,22 @@ export default function ServiceHero({ badge, title, subtitle, image }: ServiceHe
         backgroundColor: "#0B1426",
       }}
     >
-      {/* Full-width background image */}
+      {/* Full-width background image — <picture> for responsive WebP delivery */}
       {image && (
-        <Image
-          src={image.src}
-          alt=""
-          fill
-          style={{ objectFit: "cover", objectPosition: "center" }}
-          priority
+        <picture
           aria-hidden="true"
-        />
+          style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
+        >
+          {imageMobile && (
+            <source media="(max-width: 767px)" srcSet={imageMobile.src} />
+          )}
+          <img
+            src={image.src}
+            alt=""
+            fetchPriority="high"
+            style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }}
+          />
+        </picture>
       )}
 
       {/* Dark overlay */}

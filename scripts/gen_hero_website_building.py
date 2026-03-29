@@ -409,3 +409,9 @@ img = img.filter(ImageFilter.SMOOTH)
 out_path = "/Users/mini-claw/Documents/Projects/xentnexai/public/images/xentnexai-hero-website-building.webp"
 img.save(out_path, "WEBP", quality=90, method=6)
 print(f"Saved: {out_path}  ({W}x{H})")
+
+# Mobile version — 768×384
+mobile = img.resize((768, 384), Image.LANCZOS)
+mobile_path = "/Users/mini-claw/Documents/Projects/xentnexai/public/images/xentnexai-hero-website-building-mobile.webp"
+mobile.save(mobile_path, "WEBP", quality=85, method=6)
+print(f"Saved: {mobile_path}  (768x384)")

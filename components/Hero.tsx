@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { CALENDLY_URL } from "@/lib/metadata";
 
 export default function Hero() {
@@ -13,15 +12,19 @@ export default function Hero() {
         backgroundColor: "#0B1426",
       }}
     >
-      {/* Full-width background image */}
-      <Image
-        src="/images/xentnexai-hero-homepage.png"
-        alt=""
-        fill
-        style={{ objectFit: "cover", objectPosition: "center" }}
-        priority
+      {/* Full-width background image — <picture> for responsive WebP delivery */}
+      <picture
         aria-hidden="true"
-      />
+        style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
+      >
+        <source media="(max-width: 767px)" srcSet="/images/xentnexai-hero-homepage-mobile.webp" />
+        <img
+          src="/images/xentnexai-hero-homepage.png"
+          alt=""
+          fetchPriority="high"
+          style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }}
+        />
+      </picture>
 
       {/* Dark overlay for text legibility */}
       <div

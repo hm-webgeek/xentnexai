@@ -116,6 +116,7 @@ export default function AIWebsiteBuildingPage() {
         title="Professional Websites Built with AI — Live in Days"
         subtitle="No upfront costs. No lengthy timelines. AI-powered web design that delivers keyword-researched, SEO-ready, lightning-fast websites on a simple monthly subscription."
         image={{ src: "/images/xentnexai-hero-website-building.webp", alt: "AI-generated professional website design for Sunshine Coast businesses", width: 1280, height: 640 }}
+        imageMobile={{ src: "/images/xentnexai-hero-website-building-mobile.webp" }}
       />
 
       {/* Features */}
