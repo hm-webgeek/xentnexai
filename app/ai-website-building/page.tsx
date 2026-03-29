@@ -115,7 +115,7 @@ export default function AIWebsiteBuildingPage() {
         badge="Sunshine Coast AI Service"
         title="Professional Websites Built with AI — Live in Days"
         subtitle="No upfront costs. No lengthy timelines. AI-powered web design that delivers keyword-researched, SEO-ready, lightning-fast websites on a simple monthly subscription."
-        image={{ src: "/images/xentnexai-hero-website-building.png", alt: "AI-generated professional website design for Sunshine Coast businesses", width: 1280, height: 640 }}
+        image={{ src: "/images/xentnexai-hero-website-building.webp", alt: "AI-generated professional website design for Sunshine Coast businesses", width: 1280, height: 640 }}
       />
 
       {/* Features */}
