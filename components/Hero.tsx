@@ -19,7 +19,7 @@ export default function Hero() {
       >
         <source media="(max-width: 767px)" srcSet="/images/xentnexai-hero-homepage-mobile.webp" />
         <img
-          src="/images/xentnexai-hero-homepage.png"
+          src="/images/xentnexai-hero-homepage.webp"
           alt=""
           fetchPriority="high"
           style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }}

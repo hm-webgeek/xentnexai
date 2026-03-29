@@ -101,7 +101,7 @@ export default function GEOAuditReportsPage() {
         badge="Sunshine Coast AI Service · New"
         title="Is Your Business Invisible in AI Search?"
         subtitle="When someone asks ChatGPT, Gemini, or Perplexity for the best businesses in Sunshine Coast — does your name come up? A GEO Audit tells you the truth, and shows you how to fix it."
-        image={{ src: "/images/xentnexai-hero-geo.png", alt: "GEO audit lighthouse illustration", width: 1280, height: 640 }}
+        image={{ src: "/images/xentnexai-hero-geo.webp", alt: "GEO audit lighthouse illustration", width: 1280, height: 640 }}
         imageMobile={{ src: "/images/xentnexai-hero-geo-mobile.webp" }}
       />
 
