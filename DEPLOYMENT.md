@@ -25,20 +25,13 @@ Produces a static export in `/out` via Next.js (`output: "export"`). Do not edit
 
 Article files live in `content/articles/` as `.md` or `.mdx` files. Once an article is committed and pushed to `main`, it goes live automatically as part of the next deploy.
 
-## Andy's Content Workflow
-
-Andy publishes articles by pushing to the `andy` branch. A GitHub Actions workflow (`.github/workflows/auto-deploy-andy.yml`) automatically merges his changes into `main`, which triggers the platform deploy.
-
 **Andy's workflow:**
 1. Write the article as a `.md` file in `content/articles/`.
-2. Commit and push to the `andy` branch:
+2. Commit and push directly to `main`:
    ```bash
-   git push origin andy
+   git push origin main
    ```
-3. GitHub Actions merges `andy` into `main` automatically.
-4. The hosting platform detects the `main` push and deploys the site.
-
-No manual intervention is required once Andy pushes.
+3. The hosting platform detects the push and deploys the site automatically.
 
 ## Notes
 
