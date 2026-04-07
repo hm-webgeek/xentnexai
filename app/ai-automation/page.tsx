@@ -108,6 +108,10 @@ const FAQS = [
     a: "ChatGPT gives you answers when you ask questions. AI automation takes action without you having to ask. It captures a lead at 11pm and sends them a follow-up email. It answers your phone when you're on a job. It books an appointment into your calendar without anyone getting involved. You're not typing prompts — the system is doing the work on its own, in the background, while you get on with your day.",
   },
   {
+    q: "What platforms and tools do you use to build automation systems?",
+    a: "We use a range of leading automation platforms depending on what's the right fit for your business — including OpenClaw, Make.com, n8n, Zapier, Voiceflow, and Vapi. OpenClaw in particular has become a well-known name in the AI agent space, and we're experienced with it. But we don't push any single tool — we recommend what's best for your specific workflows, budget, and existing software.",
+  },
+  {
     q: "Is this affordable for a small business on the Sunshine Coast?",
     a: "Yes. We scope every project to your business size and budget, and we're transparent about costs from the start. Many of our clients see a return within the first month — either through time saved or through leads captured that would otherwise have been missed. We're not here to sell you a Ferrari when a reliable ute will do the job.",
   },
@@ -121,7 +125,7 @@ export default function AIAutomationPage() {
       <ServiceHero
         badge="AI Automation Sunshine Coast"
         title="Stop Doing It All Manually — Let AI Run the Repetitive Stuff"
-        subtitle="You started your business to do the work you love — not to spend your evenings chasing enquiries, rescheduling bookings, or following up on quotes that went cold. XentnexAI builds AI automation systems for Sunshine Coast businesses so the repetitive, time-draining tasks get handled for you."
+        subtitle="You started your business to do the work you love — not to spend your evenings chasing enquiries, rescheduling bookings, or following up on quotes that went cold. XentnexAI builds AI automation systems for Sunshine Coast businesses using platforms like OpenClaw, Make.com, and n8n — configured for your workflows, so the repetitive, time-draining tasks get handled for you."
         image={{ src: "/images/xentnexai-hero-automation.png", alt: "Sunshine Coast business owner relaxed at cafe with AI automation running in the background", width: 1280, height: 640 }}
       />
 
@@ -249,8 +253,11 @@ export default function AIAutomationPage() {
               <p style={{ color: "#334155", fontSize: "1rem", lineHeight: 1.75, marginBottom: "1rem" }}>
                 We work in plain English. We don&apos;t hide behind technical jargon or make simple things sound complicated. When we build your automation system, we explain how it works, what it&apos;s doing, and how to read the results.
               </p>
-              <p style={{ color: "#334155", fontSize: "1rem", lineHeight: 1.75 }}>
+              <p style={{ color: "#334155", fontSize: "1rem", lineHeight: 1.75, marginBottom: "1rem" }}>
                 There are no lock-in contracts. We want to earn your business every month. And we provide ongoing support — so as your business grows, your system grows with you.
+              </p>
+              <p style={{ color: "#64748B", fontSize: "0.9rem", lineHeight: 1.7 }}>
+                <strong style={{ color: "#1A2740" }}>Tools we work with:</strong> OpenClaw, Make.com, n8n, Zapier, Voiceflow, Vapi, HubSpot, Google Workspace, Calendly, ServiceM8 and more — we use the right tool for your situation, not a one-size-fits-all stack.
               </p>
             </div>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(1, 1fr)", gap: "1rem" }} className="sm:grid-cols-2">
