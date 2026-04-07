@@ -5,17 +5,18 @@ import { useState } from "react";
 import { CALENDLY_URL } from "@/lib/metadata";
 import Logo from "@/components/Logo";
 
-const NAV_LINKS = [
-  { label: "Automation", href: "/ai-automation" },
-  { label: "Lead Generation", href: "/ai-lead-generation" },
-  { label: "Voice Agents", href: "/ai-voice-agents" },
-  { label: "Website Building", href: "/ai-website-building" },
+const SERVICE_LINKS = [
+  { label: "AI Automation", href: "/ai-automation" },
+  { label: "AI Lead Generation", href: "/ai-lead-generation" },
+  { label: "AI Voice Agents", href: "/ai-voice-agents" },
+  { label: "AI Website Building", href: "/ai-website-building" },
   { label: "GEO Audit Reports", href: "/geo-audit-reports" },
-  { label: "AI News", href: "/ai-news" },
 ];
 
 export default function Header() {
-  const [open, setOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [desktopServicesOpen, setDesktopServicesOpen] = useState(false);
 
   return (
     <>
@@ -50,23 +51,106 @@ export default function Header() {
             style={{ alignItems: "center", gap: "2rem" }}
             className="hidden md:flex"
           >
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
+            {/* AI Services dropdown */}
+            <div
+              style={{ position: "relative" }}
+              onMouseEnter={() => setDesktopServicesOpen(true)}
+              onMouseLeave={() => setDesktopServicesOpen(false)}
+            >
+              <button
                 style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.25rem",
                   fontSize: "0.875rem",
                   fontWeight: 500,
-                  color: "#64748B",
-                  textDecoration: "none",
+                  color: desktopServicesOpen ? "#1A2740" : "#64748B",
+                  background: "none",
+                  border: "none",
+                  cursor: "pointer",
+                  padding: 0,
                   transition: "color 0.15s",
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "#1A2740")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "#64748B")}
               >
-                {link.label}
-              </Link>
-            ))}
+                AI Services
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  style={{
+                    transition: "transform 0.2s",
+                    transform: desktopServicesOpen ? "rotate(180deg)" : "rotate(0deg)",
+                  }}
+                >
+                  <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </button>
+
+              {/* Dropdown panel */}
+              <div
+                style={{
+                  position: "absolute",
+                  top: "calc(100% + 0.75rem)",
+                  left: "50%",
+                  transform: "translateX(-50%)",
+                  backgroundColor: "#FFFFFF",
+                  borderRadius: "0.75rem",
+                  boxShadow: "0 8px 32px rgba(26, 39, 64, 0.12)",
+                  border: "1px solid #E8EFF4",
+                  padding: "0.5rem",
+                  minWidth: "200px",
+                  opacity: desktopServicesOpen ? 1 : 0,
+                  pointerEvents: desktopServicesOpen ? "auto" : "none",
+                  transition: "opacity 0.15s ease",
+                }}
+              >
+                {SERVICE_LINKS.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    style={{
+                      display: "block",
+                      fontSize: "0.875rem",
+                      fontWeight: 500,
+                      color: "#64748B",
+                      textDecoration: "none",
+                      padding: "0.625rem 0.875rem",
+                      borderRadius: "0.5rem",
+                      transition: "background-color 0.15s, color 0.15s",
+                      whiteSpace: "nowrap",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = "#F0FDFC";
+                      e.currentTarget.style.color = "#1BA899";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = "transparent";
+                      e.currentTarget.style.color = "#64748B";
+                    }}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* AI News */}
+            <Link
+              href="/ai-news"
+              style={{
+                fontSize: "0.875rem",
+                fontWeight: 500,
+                color: "#64748B",
+                textDecoration: "none",
+                transition: "color 0.15s",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#1A2740")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#64748B")}
+            >
+              AI News
+            </Link>
+
             <a
               href={CALENDLY_URL}
               target="_blank"
@@ -80,7 +164,7 @@ export default function Header() {
 
           {/* Mobile hamburger */}
           <button
-            onClick={() => setOpen(!open)}
+            onClick={() => setMobileOpen(!mobileOpen)}
             className="md:hidden"
             style={{
               background: "none",
@@ -93,7 +177,7 @@ export default function Header() {
             }}
             aria-label="Toggle menu"
           >
-            {open ? (
+            {mobileOpen ? (
               <svg width="22" height="22" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>
@@ -106,19 +190,18 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Slide-out overlay — outside <header> so it covers full viewport */}
       {/* Backdrop */}
       <div
         className="md:hidden"
-        onClick={() => setOpen(false)}
+        onClick={() => setMobileOpen(false)}
         style={{
           position: "fixed",
           inset: 0,
           zIndex: 55,
           backgroundColor: "rgba(26, 39, 64, 0.4)",
           backdropFilter: "blur(2px)",
-          opacity: open ? 1 : 0,
-          pointerEvents: open ? "auto" : "none",
+          opacity: mobileOpen ? 1 : 0,
+          pointerEvents: mobileOpen ? "auto" : "none",
           transition: "opacity 0.25s ease",
         }}
       />
@@ -138,7 +221,7 @@ export default function Header() {
           display: "flex",
           flexDirection: "column",
           padding: "1.5rem",
-          transform: open ? "translateX(0)" : "translateX(100%)",
+          transform: mobileOpen ? "translateX(0)" : "translateX(100%)",
           transition: "transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
         }}
       >
@@ -146,7 +229,7 @@ export default function Header() {
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "2rem" }}>
           <Logo variant="light" height={40} />
           <button
-            onClick={() => setOpen(false)}
+            onClick={() => setMobileOpen(false)}
             style={{ background: "none", border: "none", cursor: "pointer", color: "#64748B", padding: "0.25rem" }}
             aria-label="Close menu"
           >
@@ -158,26 +241,89 @@ export default function Header() {
 
         {/* Nav links */}
         <nav style={{ display: "flex", flexDirection: "column", gap: "0.25rem", flex: 1 }}>
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={() => setOpen(false)}
+          {/* AI Services accordion */}
+          <button
+            onClick={() => setServicesOpen(!servicesOpen)}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              fontSize: "1rem",
+              color: "#334155",
+              fontWeight: 500,
+              padding: "0.75rem 0.5rem",
+              borderBottom: "1px solid #F1F5F9",
+              background: "none",
+              cursor: "pointer",
+              width: "100%",
+              textAlign: "left",
+            }}
+          >
+            AI Services
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 20 20"
+              fill="currentColor"
               style={{
-                fontSize: "1rem",
-                color: "#334155",
-                textDecoration: "none",
-                fontWeight: 500,
-                padding: "0.75rem 0.5rem",
-                borderBottom: "1px solid #F1F5F9",
-                transition: "color 0.15s",
+                transition: "transform 0.2s",
+                transform: servicesOpen ? "rotate(180deg)" : "rotate(0deg)",
+                color: "#64748B",
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#2DD4BF")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "#334155")}
             >
-              {link.label}
-            </Link>
-          ))}
+              <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+            </svg>
+          </button>
+
+          {/* Submenu */}
+          <div
+            style={{
+              overflow: "hidden",
+              maxHeight: servicesOpen ? "400px" : "0",
+              transition: "max-height 0.25s ease",
+            }}
+          >
+            {SERVICE_LINKS.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setMobileOpen(false)}
+                style={{
+                  display: "block",
+                  fontSize: "0.9375rem",
+                  color: "#64748B",
+                  textDecoration: "none",
+                  fontWeight: 500,
+                  padding: "0.625rem 0.5rem 0.625rem 1.25rem",
+                  borderBottom: "1px solid #F1F5F9",
+                  transition: "color 0.15s",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#1BA899")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "#64748B")}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+
+          {/* AI News */}
+          <Link
+            href="/ai-news"
+            onClick={() => setMobileOpen(false)}
+            style={{
+              fontSize: "1rem",
+              color: "#334155",
+              textDecoration: "none",
+              fontWeight: 500,
+              padding: "0.75rem 0.5rem",
+              borderBottom: "1px solid #F1F5F9",
+              transition: "color 0.15s",
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "#2DD4BF")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "#334155")}
+          >
+            AI News
+          </Link>
         </nav>
 
         {/* CTA at bottom */}
@@ -187,7 +333,7 @@ export default function Header() {
           rel="noopener noreferrer"
           className="btn-primary"
           style={{ display: "flex", justifyContent: "center", marginTop: "2rem" }}
-          onClick={() => setOpen(false)}
+          onClick={() => setMobileOpen(false)}
         >
           Book a Free Call
         </a>
