@@ -6,9 +6,9 @@ import ContactForm from "@/components/ContactForm";
 import StructuredData from "@/components/StructuredData";
 
 export const metadata: Metadata = buildMetadata({
-  title: "AI Lead Generation for Sunshine Coast Businesses",
+  title: "AI Lead Generation Sunshine Coast",
   description:
-    "Automate your lead generation with AI systems built for Sunshine Coast businesses. Capture, qualify, and nurture leads 24/7 without extra staff.",
+    "Never miss another enquiry. XentnexAI builds AI-powered lead generation systems for Sunshine Coast businesses. Get a free consultation today.",
   path: "/ai-lead-generation",
 });
 
@@ -99,8 +99,8 @@ export default function AILeadGenerationPage() {
 
       <ServiceHero
         badge="Sunshine Coast AI Service"
-        title="AI Lead Generation for Sunshine Coast Businesses"
-        subtitle="Stop chasing cold leads. Our AI systems capture qualified prospects automatically — 24 hours a day, 7 days a week — so your sales pipeline is always full."
+        title="Stop Losing Leads: AI-Powered Lead Generation for Sunshine Coast Business Owners"
+        subtitle="Every day, potential customers visit your website, send a message after hours, or fill out a form and never hear back. XentnexAI builds systems that capture every one of those enquiries, qualify them instantly, and follow up — whether it&apos;s 9am on a Monday or midnight on a Saturday."
         image={{ src: "/images/xentnexai-hero-lead-gen.webp", alt: "AI lead generation network illustration", width: 1280, height: 640 }}
         imageMobile={{ src: "/images/xentnexai-hero-lead-gen-mobile.webp" }}
       />

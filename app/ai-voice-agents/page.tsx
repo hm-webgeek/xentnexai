@@ -6,9 +6,9 @@ import ContactForm from "@/components/ContactForm";
 import StructuredData from "@/components/StructuredData";
 
 export const metadata: Metadata = buildMetadata({
-  title: "AI Voice Agents for Sunshine Coast Businesses",
+  title: "AI Voice Agents Sunshine Coast | Never Miss a Call",
   description:
-    "Never miss a call again. XentnexAI's AI Voice Agents answer, qualify, and book appointments 24/7 for Sunshine Coast businesses. Sound natural, act instantly.",
+    "24/7 AI call answering for Sunshine Coast trades, clinics & local businesses. Book appointments, qualify leads, never miss a call. Get a free demo today.",
   path: "/ai-voice-agents",
 });
 
@@ -99,8 +99,8 @@ export default function AIVoiceAgentsPage() {
 
       <ServiceHero
         badge="Sunshine Coast AI Service"
-        title="AI Voice Agents That Answer Every Call"
-        subtitle="Every missed call is a missed opportunity. Our AI voice agents answer instantly, qualify prospects, and book appointments — 24 hours a day, 7 days a week."
+        title="Never Miss a Call Again: AI Voice Agents for Sunshine Coast Trades & Local Business"
+        subtitle="Every unanswered call on the Sunshine Coast is a potential job walking straight to your competitor. An AI voice agent answers every call — day or night, weekends included — sounds natural, handles common questions, and books appointments directly into your calendar without you lifting a finger."
         image={{ src: "/images/xentnexai-hero-voice.webp", alt: "AI voice agent answering calls after hours", width: 1280, height: 640 }}
         imageMobile={{ src: "/images/xentnexai-hero-voice-mobile.webp" }}
       />

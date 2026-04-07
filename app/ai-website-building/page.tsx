@@ -6,9 +6,9 @@ import ContactForm from "@/components/ContactForm";
 import StructuredData from "@/components/StructuredData";
 
 export const metadata: Metadata = buildMetadata({
-  title: "AI Website Building for Sunshine Coast Businesses",
+  title: "AI Website Design Sunshine Coast",
   description:
-    "Professional AI-built websites for Sunshine Coast businesses. Rapid deployment, no upfront costs, monthly subscription. Keyword research, solid SEO, lightning-fast performance — live in days.",
+    "AI-powered websites for Sunshine Coast businesses. Fast builds, smart design, built to convert. Get a free quote from your local AI agency today.",
   path: "/ai-website-building",
 });
 
@@ -113,8 +113,8 @@ export default function AIWebsiteBuildingPage() {
 
       <ServiceHero
         badge="Sunshine Coast AI Service"
-        title="Professional Websites Built with AI — Live in Days"
-        subtitle="No upfront costs. No lengthy timelines. AI-powered web design that delivers keyword-researched, SEO-ready, lightning-fast websites on a simple monthly subscription."
+        title="AI-Powered Websites for Sunshine Coast Business Owners — Fast, Smart & Built to Convert"
+        subtitle="AI website design on the Sunshine Coast is a fundamentally different experience from working with a traditional web designer — faster to build, smarter in structure, and built from the ground up to be found in both Google and AI-powered search. You shouldn&apos;t have to wait three months and spend a fortune to get a website that actually does its job."
         image={{ src: "/images/xentnexai-hero-website-building.webp", alt: "AI-generated professional website design for Sunshine Coast businesses", width: 1280, height: 640 }}
         imageMobile={{ src: "/images/xentnexai-hero-website-building-mobile.webp" }}
       />
@@ -213,9 +213,56 @@ export default function AIWebsiteBuildingPage() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section style={{ backgroundColor: "#FFFFFF", padding: "5rem 1.5rem" }}>
+        <div style={{ maxWidth: "56rem", margin: "0 auto" }}>
+          <div style={{ textAlign: "center", marginBottom: "3rem" }}>
+            <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", fontWeight: 700, color: "#1A2740", letterSpacing: "-0.02em", marginBottom: "0.75rem" }}>
+              Frequently Asked Questions
+            </h2>
+            <p style={{ color: "#64748B", fontSize: "1rem", lineHeight: 1.7, maxWidth: "52ch", margin: "0 auto" }}>
+              Common questions about AI website building for Sunshine Coast businesses.
+            </p>
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+            {[
+              {
+                q: "How is an AI website different from a regular website?",
+                a: "An AI-powered website is built with AI-native architecture from the ground up — structured data, content frameworks, and technical signals that help AI search tools like ChatGPT and Gemini understand and recommend your business. It&apos;s also built faster using AI-assisted processes, which keeps costs lower and turnaround times shorter. The end result looks like a high-quality professional site, but it&apos;s smarter under the hood.",
+              },
+              {
+                q: "How much does it cost?",
+                a: "Pricing depends on the size and complexity of the build. We publish starting-from pricing for standard business websites and give you a fixed quote before any work begins. Book a free consultation and we&apos;ll give you a clear number for your specific requirements.",
+              },
+              {
+                q: "Do I own the site when it&apos;s built?",
+                a: "Yes, completely. You own the domain, the code, and all the content. We don&apos;t lock you into proprietary platforms or monthly licences for the site itself.",
+              },
+              {
+                q: "Will it rank on Google?",
+                a: "We build every site with solid SEO foundations — proper page structure, metadata, fast load speeds, and mobile optimisation. That gives your site the best possible starting position in search. Long-term ranking depends on content, authority, and ongoing optimisation, which we can support separately.",
+              },
+              {
+                q: "Can you add AI lead generation or an AI voice agent to my new site?",
+                a: "Absolutely. Many of our clients bundle their new website with AI lead generation and an AI voice agent, creating a complete automated sales and enquiry system from day one. Ask us about our bundle pricing when you book your consultation.",
+              },
+              {
+                q: "What if I already have a website — can you improve it instead?",
+                a: "Yes. If your existing site is structurally sound, we can audit and improve it rather than starting from scratch. We&apos;ll tell you honestly whether a rebuild or a refresh makes more sense for your situation.",
+              },
+            ].map((item) => (
+              <div key={item.q} style={{ padding: "1.5rem 1.75rem", borderRadius: "1rem", backgroundColor: "#F8FAFB", border: "1px solid #E8EFF4" }}>
+                <h3 style={{ color: "#1A2740", fontWeight: 600, fontSize: "1rem", marginBottom: "0.625rem" }}>{item.q}</h3>
+                <p style={{ color: "#334155", fontSize: "0.9rem", lineHeight: 1.7, margin: 0 }} dangerouslySetInnerHTML={{ __html: item.a }} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <CTASection
         heading="Your New Website Could Be Live This Week"
-        subheading="Book a free call and we'll show you exactly what we can build for your Sunshine Coast business — keyword research, design concept, and a clear timeline included."
+        subheading="Book a free consultation and we&apos;ll look at your current online presence, discuss what you need your website to do, and give you a clear picture of what we&apos;d build and what it would cost. No obligation, no hard sell."
       />
       <ContactForm />
     </>

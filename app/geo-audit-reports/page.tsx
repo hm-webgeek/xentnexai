@@ -6,9 +6,9 @@ import ContactForm from "@/components/ContactForm";
 import StructuredData from "@/components/StructuredData";
 
 export const metadata: Metadata = buildMetadata({
-  title: "GEO Audit Reports — Is Your Business Visible in AI Search?",
+  title: "GEO Audit Reports | AI Search Visibility",
   description:
-    "Generative Engine Optimisation (GEO) audit for Sunshine Coast businesses. Find out if ChatGPT, Gemini, and Perplexity recommend your business — and fix it if they don't.",
+    "Find out if your business appears in ChatGPT, Gemini & Perplexity. Our GEO Audit Report shows you exactly what to fix. Order yours today.",
   path: "/geo-audit-reports",
 });
 
@@ -99,8 +99,8 @@ export default function GEOAuditReportsPage() {
 
       <ServiceHero
         badge="Sunshine Coast AI Service · New"
-        title="Is Your Business Invisible in AI Search?"
-        subtitle="When someone asks ChatGPT, Gemini, or Perplexity for the best businesses in Sunshine Coast — does your name come up? A GEO Audit tells you the truth, and shows you how to fix it."
+        title="Does Your Business Show Up When Customers Ask ChatGPT? Find Out With a GEO Audit."
+        subtitle="More Sunshine Coast customers are now using AI tools like ChatGPT, Google Gemini, and Perplexity to find local businesses — and most local businesses have no idea whether they show up in those results or not. A GEO audit tells you exactly where you stand, and gives you a clear action plan to fix any gaps."
         image={{ src: "/images/xentnexai-hero-geo.webp", alt: "GEO audit lighthouse illustration", width: 1280, height: 640 }}
         imageMobile={{ src: "/images/xentnexai-hero-geo-mobile.webp" }}
       />

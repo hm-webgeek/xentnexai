@@ -9,9 +9,9 @@ import ContactForm from "@/components/ContactForm";
 import StructuredData from "@/components/StructuredData";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Sunshine Coast AI Agency",
+  title: "AI Agency Sunshine Coast",
   description:
-    "XentnexAI delivers AI Lead Generation, AI Voice Agents, and GEO Audit Reports for Sunshine Coast businesses. Get found, get leads, and grow automatically.",
+    "Sunshine Coast AI agency helping local businesses automate lead generation, answer every call, and get found in AI search. Book a free strategy call today.",
   path: "/",
 });
 

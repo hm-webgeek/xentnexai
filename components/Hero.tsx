@@ -92,9 +92,8 @@ export default function Hero() {
             marginBottom: "1.5rem",
           }}
         >
-          Turn Sunshine Coast Leads Into{" "}
-          <span style={{ color: "#E8A020" }}>Customers</span>{" "}
-          — Automatically
+          Sunshine Coast&apos;s AI Agency for Local Business{" "}
+          <span style={{ color: "#E8A020" }}>Growth</span>
         </h1>
 
         {/* Subheading */}
@@ -107,9 +106,9 @@ export default function Hero() {
             marginBottom: "2.5rem",
           }}
         >
-          We build AI systems that generate leads, answer calls 24/7, and ensure your
-          business gets found in ChatGPT and Google AI — tailored for Sunshine Coast
-          businesses ready to grow.
+          XentnexAI is a Sunshine Coast AI agency built for local business owners who want
+          real results — not tech demos. More leads captured. Fewer calls missed. And a
+          business that shows up whether you&apos;re on the tools or off the clock.
         </p>
 
         {/* CTAs */}
