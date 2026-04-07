@@ -6,21 +6,21 @@ import ContactForm from "@/components/ContactForm";
 import StructuredData from "@/components/StructuredData";
 
 export const metadata: Metadata = buildMetadata({
-  title: "AI Voice Agents Sunshine Coast | Never Miss a Call",
+  title: "AI Receptionist Sunshine Coast | Never Miss a Call",
   description:
-    "24/7 AI call answering for Sunshine Coast trades, clinics & local businesses. Book appointments, qualify leads, never miss a call. Get a free demo today.",
-  path: "/ai-voice-agents",
+    "24/7 AI receptionist for Sunshine Coast trades, clinics & local businesses. Book appointments, qualify leads, answer every call. Get a free demo today.",
+  path: "/ai-receptionist",
 });
 
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "AI Voice Agents",
+  name: "AI Receptionist",
   provider: { "@type": "LocalBusiness", name: "XentnexAI", url: BASE_URL },
   description:
-    "AI-powered voice agents that answer calls, qualify leads, and book appointments 24/7 for Sunshine Coast businesses.",
+    "AI-powered receptionist that answers calls, qualifies leads, and books appointments 24/7 for Sunshine Coast businesses.",
   areaServed: "Sunshine Coast, Queensland, Australia",
-  serviceType: "AI Voice Agents",
+  serviceType: "AI Receptionist",
 };
 
 const FEATURES = [
@@ -83,7 +83,7 @@ const FEATURES = [
 const STEPS = [
   { num: "01", title: "Business Onboarding", body: "We learn your services, FAQs, booking process, and tone of voice. Your AI agent is trained to sound like a member of your team." },
   { num: "02", title: "Integration & Testing", body: "We connect to your phone number and calendar system, then run thorough testing to ensure every call scenario is handled correctly." },
-  { num: "03", title: "Go Live", body: "Your AI voice agent goes live. All calls are monitored in the first week to catch any edge cases and fine-tune responses." },
+  { num: "03", title: "Go Live", body: "Your AI receptionist goes live. All calls are monitored in the first week to catch any edge cases and fine-tune responses." },
   { num: "04", title: "Refine & Expand", body: "Monthly call reviews reveal new FAQs and opportunities. We continuously improve your agent's knowledge and performance." },
 ];
 
@@ -92,15 +92,15 @@ const INDUSTRIES = [
   "HVAC & Electrical", "Dental Practices", "Property Management", "Home Services",
 ];
 
-export default function AIVoiceAgentsPage() {
+export default function AIReceptionistPage() {
   return (
     <>
       <StructuredData data={serviceSchema} />
 
       <ServiceHero
         badge="Sunshine Coast AI Service"
-        title="Never Miss a Call Again: AI Voice Agents for Sunshine Coast Trades & Local Business"
-        subtitle="Every unanswered call on the Sunshine Coast is a potential job walking straight to your competitor. An AI voice agent answers every call — day or night, weekends included — sounds natural, handles common questions, and books appointments directly into your calendar without you lifting a finger."
+        title="Never Miss a Call Again: AI Receptionist for Sunshine Coast Trades & Local Business"
+        subtitle="Every unanswered call on the Sunshine Coast is a potential job walking straight to your competitor. Your AI receptionist answers every call — day or night, weekends included — sounds natural, handles common questions, and books appointments directly into your calendar without you lifting a finger."
         image={{ src: "/images/xentnexai-hero-voice.webp", alt: "AI voice agent answering calls after hours", width: 1280, height: 640 }}
         imageMobile={{ src: "/images/xentnexai-hero-voice-mobile.webp" }}
       />
@@ -166,7 +166,7 @@ export default function AIVoiceAgentsPage() {
 
       <CTASection
         heading="Stop Missing Calls, Start Winning Customers"
-        subheading="Book a free demo and hear your AI voice agent in action. We'll show you exactly how it would handle calls for your Sunshine Coast business."
+        subheading="Book a free demo and hear your AI receptionist in action. We'll show you exactly how it would handle calls for your Sunshine Coast business."
       />
       <ContactForm />
     </>

@@ -6,21 +6,21 @@ import ContactForm from "@/components/ContactForm";
 import StructuredData from "@/components/StructuredData";
 
 export const metadata: Metadata = buildMetadata({
-  title: "AI Website Design Sunshine Coast",
+  title: "AI Website Design Sunshine Coast | XentnexAI",
   description:
     "AI-powered websites for Sunshine Coast businesses. Fast builds, smart design, built to convert. Get a free quote from your local AI agency today.",
-  path: "/ai-website-building",
+  path: "/ai-website-design",
 });
 
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "AI Website Building",
+  name: "AI Website Design",
   provider: { "@type": "LocalBusiness", name: "XentnexAI", url: BASE_URL },
   description:
-    "Professional AI-generated websites for Sunshine Coast businesses — keyword research, solid SEO foundations, lightning-fast performance, and no upfront costs.",
+    "Professional AI website design for Sunshine Coast businesses — keyword research, solid SEO foundations, lightning-fast performance, and no upfront costs.",
   areaServed: "Sunshine Coast, Queensland, Australia",
-  serviceType: "AI Website Building",
+  serviceType: "AI Website Design",
 };
 
 const FEATURES = [
@@ -106,7 +106,7 @@ const INDUSTRIES = [
   "Professional Services", "Retail & E-commerce", "Tourism & Hospitality", "Coaches & Consultants",
 ];
 
-export default function AIWebsiteBuildingPage() {
+export default function AIWebsiteDesignPage() {
   return (
     <>
       <StructuredData data={serviceSchema} />
@@ -221,7 +221,7 @@ export default function AIWebsiteBuildingPage() {
               Frequently Asked Questions
             </h2>
             <p style={{ color: "#64748B", fontSize: "1rem", lineHeight: 1.7, maxWidth: "52ch", margin: "0 auto" }}>
-              Common questions about AI website building for Sunshine Coast businesses.
+              Common questions about AI website design for Sunshine Coast businesses.
             </p>
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
@@ -244,7 +244,7 @@ export default function AIWebsiteBuildingPage() {
               },
               {
                 q: "Can you add AI lead generation or an AI voice agent to my new site?",
-                a: "Absolutely. Many of our clients bundle their new website with AI lead generation and an AI voice agent, creating a complete automated sales and enquiry system from day one. Ask us about our bundle pricing when you book your consultation.",
+                a: "Absolutely. Many of our clients bundle their new website with AI lead generation and an AI receptionist, creating a complete automated sales and enquiry system from day one. Ask us about our bundle pricing when you book your consultation.",
               },
               {
                 q: "What if I already have a website — can you improve it instead?",

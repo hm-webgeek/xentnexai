@@ -6,8 +6,8 @@ import Logo from "@/components/Logo";
 const QUICK_LINKS = [
   { label: "AI Automation", href: "/ai-automation" },
   { label: "AI Lead Generation", href: "/ai-lead-generation" },
-  { label: "AI Voice Agents", href: "/ai-voice-agents" },
-  { label: "AI Website Building", href: "/ai-website-building" },
+  { label: "AI Receptionist", href: "/ai-receptionist" },
+  { label: "AI Website Design", href: "/ai-website-design" },
   { label: "GEO Audit Reports", href: "/geo-audit-reports" },
   { label: "AI News", href: "/ai-news" },
 ];

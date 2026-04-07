@@ -1,0 +1,59 @@
+XENTNEXAI BRANDING BRIEF
+========================
+
+Business
+--------
+XentnexAI is an AI services agency focused on the Sunshine Coast, Queensland, Australia.
+The audience is local Sunshine Coast business owners (trades, health, real estate, hospitality,
+professional services) who are not necessarily technical.
+
+Three Services
+--------------
+1. AI Lead Generation System — automated lead capture, qualification, and nurture sequences
+2. AI Voice Agents — 24/7 AI-powered call answering, lead qualification, and appointment booking
+3. GEO Audit Reports — audits how a business appears in ChatGPT, Gemini, and Perplexity,
+   with a prioritised action plan to improve AI search visibility
+
+Desired Feel
+------------
+Clean, modern, light and fresh. Approachable and trustworthy — not cold or corporate.
+Should feel local and personal, not like a faceless tech giant.
+
+Existing Colours (to evolve, not scrap)
+----------------------------------------
+- Teal accent:      #2DD4BF  (keep as signature colour)
+- Gold/amber:       #E8A020
+- Dark backgrounds: #0B1426, #0F1D35 (site is currently dark — explore light-mode-first)
+- Body text:        #94A3B8
+
+Direction Note
+--------------
+The existing site skews dark navy. The new brand guidelines should explore a lighter, fresher
+direction — light-mode-first — while keeping teal as the hero colour. Consider what a confident,
+sun-drenched, coastal-tech brand looks like at full brightness.
+
+Image Generation
+----------------
+For any raster image generation (logos, mockups, visual concepts), use ComfyUI with FLUX.1-schnell
+running locally. The model is already installed:
+
+- UNet:  ~/ComfyUI/models/unet/flux1-schnell-Q8_0.gguf
+- CLIP:  ~/ComfyUI/models/clip/clip_l.safetensors
+         ~/ComfyUI/models/clip/t5xxl_fp8.safetensors
+- VAE:   ~/ComfyUI/models/vae/flux_ae.safetensors
+
+Start ComfyUI if not running: cd ~/ComfyUI && python main.py
+API endpoint: http://127.0.0.1:8188
+
+Use the ComfyUI API to submit workflows for image generation. Do NOT use external image
+generation services.
+
+Deliverables
+------------
+Output all files to: /workspace/extra/miniclaw/xentnexai/brand/
+
+- brand-guidelines.md  — brand name rationale, voice/tone, positioning statement
+- colours.md           — full palette (primary, secondary, accent) with hex, RGB, HSL and usage rules
+- typography.md        — font pairings (Google Fonts preferred), scale, usage rules
+- logo.svg             — a clean, usable SVG logo (wordmark, icon, or combination mark)
+- logo-concepts.md     — rationale for the chosen direction, alternative concepts considered

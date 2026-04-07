@@ -9,8 +9,8 @@ const SERVICE_OPTIONS = [
   { value: "", label: "What can we help you with?" },
   { value: "ai-automation", label: "AI Automation" },
   { value: "ai-lead-generation", label: "AI Lead Generation System" },
-  { value: "ai-voice-agents", label: "AI Voice Agents" },
-  { value: "ai-website-building", label: "AI Website Building" },
+  { value: "ai-receptionist", label: "AI Receptionist" },
+  { value: "ai-website-design", label: "AI Website Design" },
   { value: "geo-audit-reports", label: "GEO Audit Report" },
   { value: "not-sure", label: "Not sure yet — let's chat" },
 ];

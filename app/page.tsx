@@ -60,10 +60,10 @@ const SERVICES = [
     ),
   },
   {
-    title: "AI Voice Agents",
+    title: "AI Receptionist",
     description:
-      "Never miss a call again. Our AI voice agents answer, qualify, and book appointments around the clock — sounding natural, acting fast.",
-    href: "/ai-voice-agents",
+      "Never miss a call again. Your AI receptionist answers, qualifies, and books appointments around the clock — sounding natural, acting fast.",
+    href: "/ai-receptionist",
     icon: (
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
         <path
