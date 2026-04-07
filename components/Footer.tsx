@@ -4,6 +4,7 @@ import Link from "next/link";
 import Logo from "@/components/Logo";
 
 const QUICK_LINKS = [
+  { label: "AI Automation", href: "/ai-automation" },
   { label: "AI Lead Generation", href: "/ai-lead-generation" },
   { label: "AI Voice Agents", href: "/ai-voice-agents" },
   { label: "AI Website Building", href: "/ai-website-building" },
