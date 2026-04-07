@@ -91,18 +91,23 @@ export default function Header() {
               <div
                 style={{
                   position: "absolute",
-                  top: "calc(100% + 0.75rem)",
+                  top: "100%",
                   left: "50%",
                   transform: "translateX(-50%)",
+                  paddingTop: "0.625rem",
+                  opacity: desktopServicesOpen ? 1 : 0,
+                  pointerEvents: desktopServicesOpen ? "auto" : "none",
+                  transition: "opacity 0.15s ease",
+                }}
+              >
+              <div
+                style={{
                   backgroundColor: "#FFFFFF",
                   borderRadius: "0.75rem",
                   boxShadow: "0 8px 32px rgba(26, 39, 64, 0.12)",
                   border: "1px solid #E8EFF4",
                   padding: "0.5rem",
                   minWidth: "200px",
-                  opacity: desktopServicesOpen ? 1 : 0,
-                  pointerEvents: desktopServicesOpen ? "auto" : "none",
-                  transition: "opacity 0.15s ease",
                 }}
               >
                 {SERVICE_LINKS.map((link) => (
@@ -133,6 +138,7 @@ export default function Header() {
                   </Link>
                 ))}
               </div>
+              </div>
             </div>
 
             {/* AI News */}
@@ -150,6 +156,39 @@ export default function Header() {
             >
               AI News
             </Link>
+
+            {/* Contact Us */}
+            <Link
+              href="/#contact"
+              style={{
+                fontSize: "0.875rem",
+                fontWeight: 500,
+                color: "#64748B",
+                textDecoration: "none",
+                transition: "color 0.15s",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#1A2740")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#64748B")}
+            >
+              Contact Us
+            </Link>
+
+            {/* Phone number */}
+            <a
+              href="tel:0752215504"
+              style={{
+                fontSize: "0.875rem",
+                fontWeight: 500,
+                color: "#1BA899",
+                textDecoration: "none",
+                transition: "color 0.15s",
+                whiteSpace: "nowrap",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#159087")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#1BA899")}
+            >
+              (07) 5221 5504
+            </a>
 
             <a
               href={CALENDLY_URL}
@@ -324,6 +363,42 @@ export default function Header() {
           >
             AI News
           </Link>
+
+          {/* Contact Us */}
+          <Link
+            href="/#contact"
+            onClick={() => setMobileOpen(false)}
+            style={{
+              fontSize: "1rem",
+              color: "#334155",
+              textDecoration: "none",
+              fontWeight: 500,
+              padding: "0.75rem 0.5rem",
+              borderBottom: "1px solid #F1F5F9",
+              transition: "color 0.15s",
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "#2DD4BF")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "#334155")}
+          >
+            Contact Us
+          </Link>
+
+          {/* Phone */}
+          <a
+            href="tel:0752215504"
+            onClick={() => setMobileOpen(false)}
+            style={{
+              fontSize: "1rem",
+              color: "#1BA899",
+              textDecoration: "none",
+              fontWeight: 500,
+              padding: "0.75rem 0.5rem",
+              borderBottom: "1px solid #F1F5F9",
+              transition: "color 0.15s",
+            }}
+          >
+            (07) 5221 5504
+          </a>
         </nav>
 
         {/* CTA at bottom */}
