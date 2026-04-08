@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getAllArticles, CATEGORIES } from "@/src/lib/articles";
-import ArticleCard from "@/components/ArticleCard";
+import ArticleGrid from "@/components/ArticleGrid";
 
 export const metadata: Metadata = {
   title: "AI News for Sunshine Coast Businesses | XentnexAI",
@@ -18,7 +18,6 @@ const CATEGORY_COLOURS: Record<string, { bg: string; text: string }> = {
 
 export default function AINewsPage() {
   const articles = getAllArticles();
-  const [featured, ...rest] = articles;
 
   return (
     <>
@@ -55,31 +54,7 @@ export default function AINewsPage() {
             })}
           </div>
 
-          {articles.length === 0 ? (
-            <div style={{ textAlign: "center" as const, padding: "6rem 1rem" }}>
-              <p style={{ fontSize: "1.1rem", fontWeight: 600, color: "#1A2740", marginBottom: "0.5rem" }}>No articles yet</p>
-              <p style={{ color: "#64748B", fontSize: "0.9rem" }}>Our AI agent publishes daily at 9am. Check back tomorrow!</p>
-            </div>
-          ) : (
-            <>
-              {featured && (
-                <div style={{ marginBottom: "3rem" }}>
-                  <p style={{ fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase" as const, color: "#94A3B8", marginBottom: "1rem" }}>Featured</p>
-                  <ArticleCard slug={featured.slug} {...featured.frontmatter} featured />
-                </div>
-              )}
-              {rest.length > 0 && (
-                <>
-                  <p style={{ fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase" as const, color: "#94A3B8", marginBottom: "1rem" }}>Latest</p>
-                  <div style={{ display: "grid", gridTemplateColumns: "repeat(1, 1fr)", gap: "1.5rem" }} className="sm:grid-cols-2 lg:grid-cols-3">
-                    {rest.map((a) => (
-                      <ArticleCard key={a.slug} slug={a.slug} {...a.frontmatter} />
-                    ))}
-                  </div>
-                </>
-              )}
-            </>
-          )}
+          <ArticleGrid articles={articles} />
         </div>
       </section>
     </>
