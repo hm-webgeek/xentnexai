@@ -9,14 +9,15 @@ Categories:
     automation     — Lead Generation (funnel + pipeline stages)
     ai-tools       — Voice Agents / Website Building (waveform + radial rings)
     industry-news  — GEO / AI Search (search panel + magnifying glass)
+    local-business — Local Business (location pins + radial connections)
 
 Output:
     /workspace/xentnexai/public/images/articles/<slug>.webp  (1280×640)
 
-Style: Dark navy + teal geometric illustration. Base elements (grid, nodes,
-corner brackets) are consistent across all articles. The focal motif changes
-per category. The slug is hashed to a seed so each article gets unique but
-reproducible layout variation within its category.
+Style: Dark navy + teal + muted orange geometric illustration. Base elements
+(grid, nodes, corner brackets) are consistent across all articles. Colours
+vary slightly per slug seed to avoid sameness. The focal motif changes per
+category. Used as the PIL fallback when ComfyUI is unavailable.
 """
 
 import sys
@@ -27,12 +28,13 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 # ── args ──────────────────────────────────────────────────────────────────────
 if len(sys.argv) < 3:
-    print("Usage: gen_article_hero.py <slug> <category> [title]")
+    print("Usage: gen_article_hero.py <slug> <category> [title] [output_dir]")
     sys.exit(1)
 
-slug     = sys.argv[1]
-category = sys.argv[2].lower().strip()
-title    = sys.argv[3] if len(sys.argv) > 3 else slug
+slug       = sys.argv[1]
+category   = sys.argv[2].lower().strip()
+title      = sys.argv[3] if len(sys.argv) > 3 else slug
+output_dir = sys.argv[4] if len(sys.argv) > 4 else "/workspace/xentnexai/public/images/articles"
 
 # Seed from slug — same slug always produces the same image
 seed = int(hashlib.md5(slug.encode()).hexdigest()[:8], 16)
@@ -44,10 +46,22 @@ NAVY      = (11, 20, 38)       # #0B1426 — background
 NAVY_MID  = (26, 39, 64)       # #1A2740 — panel fill
 TEAL      = (45, 212, 191)     # #2DD4BF — bright accent
 TEAL_DIM  = (27, 168, 153)     # #1BA899 — secondary accent
+ORANGE    = (196, 113, 58)     # muted burnt orange — depth accent
 WHITE     = (255, 255, 255)
 GRAY      = (100, 120, 150)
 
 CX, CY = W // 2, H // 2
+
+# ── per-article colour variation ──────────────────────────────────────────────
+# Shift base colours slightly per slug so no two articles look identical.
+# Amount is small (±12) to stay within the brand palette.
+def _vary(color, amount=12):
+    return tuple(max(0, min(255, c + random.randint(-amount, amount))) for c in color)
+
+TEAL     = _vary(TEAL,     10)
+TEAL_DIM = _vary(TEAL_DIM, 10)
+ORANGE   = _vary(ORANGE,   18)
+GRAY     = _vary(GRAY,      8)
 
 # ── helpers ───────────────────────────────────────────────────────────────────
 
@@ -114,13 +128,20 @@ base_nodes = [
 ]
 base_conns = [(0,2),(1,3),(2,3),(0,1),(4,6),(5,7),(6,7),(4,5),(2,6),(3,7)]
 
-for i, j in base_conns:
+# Pick 2 connections to render in orange for depth
+orange_conns = set(random.sample(range(len(base_conns)), 2))
+
+for idx, (i, j) in enumerate(base_conns):
     x0, y0, _ = base_nodes[i]
     x1, y1, _ = base_nodes[j]
-    glow_line(nd, x0, y0, x1, y1, TEAL, w=1, gw=4, ga=35)
+    colour = ORANGE if idx in orange_conns else TEAL
+    glow_line(nd, x0, y0, x1, y1, colour, w=1, gw=4, ga=35)
 
-for (nx, ny, nr) in base_nodes:
-    glow_circle(nd, nx, ny, nr, TEAL)
+# Pick 2 nodes to render in orange
+orange_nodes = set(random.sample(range(len(base_nodes)), 2))
+for idx, (nx, ny, nr) in enumerate(base_nodes):
+    colour = ORANGE if idx in orange_nodes else TEAL
+    glow_circle(nd, nx, ny, nr, colour)
 
 img = composite(img, node_layer)
 
@@ -301,13 +322,57 @@ elif category == 'industry-news':
         md.rounded_rectangle([SCX-lw//2, ly, SCX+lw//2, ly+10],
                              radius=3, fill=TEAL+(50+i*25,))
 
+elif category == 'local-business':
+    # ── Location pins in a loose coastal cluster + radial connections ──────────
+    def draw_pin(draw, px, py, size, color, alpha):
+        draw.ellipse([px-size, py-size*2, px+size, py],
+                     fill=color+(alpha,))
+        draw.polygon([(px-size, py-size), (px+size, py-size), (px, py+size*2)],
+                     fill=color+(alpha,))
+        draw.ellipse([px-size//2, py-size*2+size//2,
+                      px+size//2, py-size//2],
+                     fill=WHITE+(min(255, alpha+40),))
+
+    pins = [
+        (CX,       CY - 50,  24, TEAL,     210),
+        (CX - 190, CY + 50,  14, TEAL_DIM, 160),
+        (CX + 170, CY + 30,  14, TEAL_DIM, 160),
+        (CX - 90,  CY + 120, 10, ORANGE,   140),
+        (CX + 110, CY + 110, 10, ORANGE,   140),
+        (CX - 280, CY - 30,   8, TEAL_DIM,  90),
+        (CX + 260, CY - 70,   8, TEAL_DIM,  90),
+    ]
+
+    # Radial connections from central pin
+    for i in range(1, len(pins)):
+        px0, py0, *_ = pins[0]
+        px1, py1, *_ = pins[i]
+        colour = ORANGE if i in (3, 4) else TEAL
+        glow_line(md, px0, py0, px1, py1, colour, w=1, gw=4, ga=30)
+
+    # Cross connections
+    for i, j in [(1, 3), (2, 4), (3, 5), (4, 6)]:
+        px0, py0, *_ = pins[i]
+        px1, py1, *_ = pins[j]
+        md.line([(px0, py0), (px1, py1)], fill=TEAL+(20,), width=1)
+
+    # Ripple rings from central pin
+    for r in [55, 100, 155, 215]:
+        a = max(8, 65 - r // 4)
+        md.ellipse([CX-r, CY-50-r, CX+r, CY-50+r], outline=TEAL+(a,), width=1)
+
+    # Draw pins
+    for (px, py, sz, col, a) in pins:
+        draw_pin(md, px, py, sz, col, a)
+
 else:
     # ── Fallback: symmetric node grid ─────────────────────────────────────────
     for ix in range(4):
         for iy in range(3):
             nx = 200 + ix * 300
             ny = 160 + iy * 160
-            glow_circle(md, nx, ny, 6, TEAL)
+            colour = ORANGE if (ix + iy) % 3 == 0 else TEAL
+            glow_circle(md, nx, ny, 6, colour)
             if ix < 3:
                 glow_line(md, nx, ny, nx+300, ny, TEAL, w=1)
             if iy < 2:
@@ -332,7 +397,7 @@ labels = {
     'automation':    'Automation',
     'ai-tools':      'AI Tools',
     'industry-news': 'Industry News',
-    'local-business':'Local Business',
+    'local-business': 'Local Business',
 }
 label = labels.get(category, category.replace('-', ' ').title())
 try:
@@ -354,6 +419,6 @@ img = composite(img, badge_layer)
 img = img.filter(ImageFilter.SMOOTH)
 
 # ── save ──────────────────────────────────────────────────────────────────────
-out_path = f"/workspace/xentnexai/public/images/articles/{slug}.webp"
+out_path = f"{output_dir}/{slug}.webp"
 img.save(out_path, "WEBP", quality=85, method=6)
 print(f"Saved: {out_path}  ({W}×{H})")
