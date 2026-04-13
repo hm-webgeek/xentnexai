@@ -17,7 +17,17 @@ export interface ArticleFrontmatter {
   category: "ai-tools" | "automation" | "local-business" | "industry-news";
   summary: string;
   heroImage?: string;
+  heroImageDesktop?: string;
+  heroImageMobile?: string;
   sources?: { url: string; title: string }[];
+}
+
+export function getDesktopHeroImage(frontmatter: ArticleFrontmatter): string | undefined {
+  return frontmatter.heroImageDesktop ?? frontmatter.heroImage ?? frontmatter.heroImageMobile;
+}
+
+export function getMobileHeroImage(frontmatter: ArticleFrontmatter): string | undefined {
+  return frontmatter.heroImageMobile ?? frontmatter.heroImageDesktop ?? frontmatter.heroImage;
 }
 
 export interface Article {

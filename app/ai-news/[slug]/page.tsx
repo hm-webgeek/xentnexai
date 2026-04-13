@@ -1,8 +1,7 @@
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { getAllArticles, getArticleBySlug, CATEGORIES } from "@/src/lib/articles";
+import { getAllArticles, getArticleBySlug, CATEGORIES, getDesktopHeroImage, getMobileHeroImage } from "@/src/lib/articles";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -37,6 +36,8 @@ export default async function ArticlePage({ params }: Props) {
   const { frontmatter, content } = article;
   const categoryLabel = CATEGORIES[frontmatter.category] ?? frontmatter.category;
   const c = CATEGORY_COLOURS[frontmatter.category] ?? { bg: "#F1F5F9", text: "#475569" };
+  const desktopHero = getDesktopHeroImage(frontmatter);
+  const mobileHero = getMobileHeroImage(frontmatter);
 
   return (
     <div style={{ backgroundColor: "#F8FAFB", minHeight: "60vh" }}>
@@ -69,8 +70,15 @@ export default async function ArticlePage({ params }: Props) {
       {/* Hero image */}
       <div style={{ maxWidth: "48rem", margin: "0 auto", padding: "0 1.5rem" }}>
         <div style={{ position: "relative", height: "22rem", borderRadius: "0 0 1rem 1rem", overflow: "hidden", backgroundColor: "#E8EFF4" }}>
-          {frontmatter.heroImage ? (
-            <Image src={frontmatter.heroImage} alt={frontmatter.title} fill style={{ objectFit: "cover" }} priority />
+          {desktopHero || mobileHero ? (
+            <picture>
+              {mobileHero ? <source media="(max-width: 767px)" srcSet={mobileHero} /> : null}
+              <img
+                src={desktopHero ?? mobileHero}
+                alt={frontmatter.title}
+                style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+              />
+            </picture>
           ) : (
             <div style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100%", background: "linear-gradient(135deg, #0B1426 0%, #1A2740 100%)" }}>
               <svg width="48" height="48" viewBox="0 0 80 80" fill="none" opacity={0.35}><circle stroke="#2DD4BF" strokeWidth="2" cx="40" cy="40" r="25" strokeDasharray="130 25" /><circle fill="#2DD4BF" cx="40" cy="17" r="4" /><circle fill="#2DD4BF" cx="40" cy="40" r="4" /></svg>

@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 const CATEGORIES: Record<string, string> = {
   "ai-tools": "AI Tools",
   automation: "Automation",
@@ -23,11 +22,14 @@ interface ArticleCardProps {
   date: string;
   category: string;
   heroImage?: string;
+  heroImageDesktop?: string;
+  heroImageMobile?: string;
   featured?: boolean;
 }
 
-export default function ArticleCard({ slug, title, summary, date, category, heroImage, featured = false }: ArticleCardProps) {
+export default function ArticleCard({ slug, title, summary, date, category, heroImage, heroImageDesktop, heroImageMobile, featured = false }: ArticleCardProps) {
   const c = CATEGORY_COLOURS[category] ?? { bg: "#F1F5F9", text: "#475569" };
+  const cardHero = heroImageDesktop ?? heroImage ?? heroImageMobile;
 
   return (
     <Link href={`/ai-news/${slug}`} style={{ textDecoration: "none", display: "block", height: "100%" }}>
@@ -37,8 +39,8 @@ export default function ArticleCard({ slug, title, summary, date, category, hero
         onMouseLeave={(e) => { e.currentTarget.style.boxShadow = "none"; e.currentTarget.style.transform = "none"; }}
       >
         <div style={{ position: "relative", height: featured ? "22rem" : "13rem", backgroundColor: "#E8EFF4" }}>
-          {heroImage ? (
-            <Image src={heroImage} alt={title} fill style={{ objectFit: "cover" }} />
+          {cardHero ? (
+            <img src={cardHero} alt={title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
           ) : (
             <div style={{ height: "100%", background: "linear-gradient(135deg, #0B1426 0%, #1A2740 100%)", display: "flex", alignItems: "center", justifyContent: "center" }}>
               <svg width="40" height="40" viewBox="0 0 80 80" fill="none" opacity={0.35}>

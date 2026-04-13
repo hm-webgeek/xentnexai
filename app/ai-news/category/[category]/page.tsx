@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import Image from "next/image";
-import { getAllArticles, CATEGORIES } from "@/src/lib/articles";
+import { getAllArticles, CATEGORIES, getDesktopHeroImage } from "@/src/lib/articles";
 
 interface Props {
   params: Promise<{ category: string }>;
@@ -52,8 +51,8 @@ export default async function CategoryPage({ params }: Props) {
                 <Link key={article.slug} href={`/ai-news/${article.slug}`} style={{ textDecoration: "none" }}>
                   <div style={{ backgroundColor: "#FFFFFF", borderRadius: "1rem", border: "1px solid #E8EFF4", overflow: "hidden" }}>
                     <div style={{ position: "relative", height: "13rem", backgroundColor: "#E8EFF4" }}>
-                      {article.frontmatter.heroImage ? (
-                        <Image src={article.frontmatter.heroImage} alt={article.frontmatter.title} fill style={{ objectFit: "cover" }} />
+                      {getDesktopHeroImage(article.frontmatter) ? (
+                        <img src={getDesktopHeroImage(article.frontmatter)} alt={article.frontmatter.title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                       ) : (
                         <div style={{ height: "100%", background: "linear-gradient(135deg, #0B1426 0%, #1A2740 100%)" }} />
                       )}
