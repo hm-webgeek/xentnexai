@@ -1,21 +1,36 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ArticleCard from "@/components/ArticleCard";
 import type { Article } from "@/src/lib/articles";
 
-const PAGE_SIZE = 11; // 1 featured + 10 in 2-col grid
+const PAGE_SIZE_DESKTOP = 11; // 1 featured + 10 in 2-col grid
+const PAGE_SIZE_MOBILE = 8;
 
 interface Props {
   articles: Article[];
 }
 
 export default function ArticleGrid({ articles }: Props) {
+  const [isMobile, setIsMobile] = useState(false);
   const [page, setPage] = useState(1);
-  const totalPages = Math.ceil(articles.length / PAGE_SIZE);
 
-  const start = (page - 1) * PAGE_SIZE;
-  const pageArticles = articles.slice(start, start + PAGE_SIZE);
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    const handler = (e: MediaQueryListEvent) => {
+      setIsMobile(e.matches);
+      setPage(1);
+    };
+    setIsMobile(mq.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
+
+  const pageSize = isMobile ? PAGE_SIZE_MOBILE : PAGE_SIZE_DESKTOP;
+  const totalPages = Math.ceil(articles.length / pageSize);
+
+  const start = (page - 1) * pageSize;
+  const pageArticles = articles.slice(start, start + pageSize);
   const [featured, ...rest] = pageArticles;
 
   return (
@@ -27,21 +42,33 @@ export default function ArticleGrid({ articles }: Props) {
         </div>
       ) : (
         <>
-          {featured && (
-            <div style={{ marginBottom: "2.5rem" }}>
-              <p style={{ fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "#94A3B8", marginBottom: "1rem" }}>Featured</p>
-              <ArticleCard slug={featured.slug} {...featured.frontmatter} featured />
-            </div>
-          )}
-
-          {rest.length > 0 && (
+          {isMobile ? (
             <>
-              <p style={{ fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "#94A3B8", marginBottom: "1rem" }}>Latest</p>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "1.5rem", marginBottom: "3rem" }}>
-                {rest.map((a) => (
+              <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "1.5rem", marginBottom: "3rem" }}>
+                {pageArticles.map((a) => (
                   <ArticleCard key={a.slug} slug={a.slug} {...a.frontmatter} />
                 ))}
               </div>
+            </>
+          ) : (
+            <>
+              {featured && (
+                <div style={{ marginBottom: "2.5rem" }}>
+                  <p style={{ fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "#94A3B8", marginBottom: "1rem" }}>Featured</p>
+                  <ArticleCard slug={featured.slug} {...featured.frontmatter} featured />
+                </div>
+              )}
+
+              {rest.length > 0 && (
+                <>
+                  <p style={{ fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "#94A3B8", marginBottom: "1rem" }}>Latest</p>
+                  <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "1.5rem", marginBottom: "3rem" }}>
+                    {rest.map((a) => (
+                      <ArticleCard key={a.slug} slug={a.slug} {...a.frontmatter} />
+                    ))}
+                  </div>
+                </>
+              )}
             </>
           )}
 
