@@ -17,11 +17,11 @@ export async function generateMetadata({ params }: Props) {
   return { title: `${label} — AI News | XentnexAI` };
 }
 
-const CATEGORY_COLOURS: Record<string, { bg: string; text: string }> = {
-  "ai-tools":      { bg: "#E6FAF8", text: "#1BA899" },
-  automation:      { bg: "#EEF2FF", text: "#4F46E5" },
-  "local-business":{ bg: "#FEF6E4", text: "#C47A10" },
-  "industry-news": { bg: "#F1F5F9", text: "#475569" },
+const CATEGORY_SUBHEADINGS: Record<string, string> = {
+  "ai-tools":       "Discover the AI tools helping Sunshine Coast businesses work smarter and grow faster.",
+  automation:       "Automation guides and workflows for Sunshine Coast businesses ready to reclaim their time.",
+  "local-business": "AI news and practical insights for local businesses on the Sunshine Coast, QLD.",
+  "industry-news":  "Stay across the latest AI industry developments and what they mean for your business.",
 };
 
 export default async function CategoryPage({ params }: Props) {
@@ -30,15 +30,15 @@ export default async function CategoryPage({ params }: Props) {
   if (!label) notFound();
 
   const articles = getAllArticles().filter((a) => a.frontmatter.category === category);
-  const c = CATEGORY_COLOURS[category] ?? { bg: "#F1F5F9", text: "#475569" };
+  const subheading = CATEGORY_SUBHEADINGS[category] ?? "";
 
   return (
     <div style={{ backgroundColor: "#F8FAFB", minHeight: "60vh" }}>
       <section style={{ backgroundColor: "#0B1426", padding: "3rem 1.5rem" }}>
         <div style={{ maxWidth: "72rem", margin: "0 auto" }}>
           <Link href="/ai-news" style={{ fontSize: "0.875rem", color: "#64748B", textDecoration: "none", display: "inline-block", marginBottom: "1.25rem" }}>← AI News</Link>
-          <span style={{ display: "inline-block", padding: "0.3rem 0.875rem", borderRadius: "9999px", backgroundColor: c.bg, color: c.text, fontSize: "0.8125rem", fontWeight: 600, marginBottom: "1rem" }}>{label}</span>
-          <h1 style={{ fontSize: "clamp(1.75rem, 4vw, 2.5rem)", fontWeight: 800, color: "#F0F4F8", letterSpacing: "-0.02em" }}>{label}</h1>
+          <h1 style={{ fontSize: "clamp(1.75rem, 4vw, 2.5rem)", fontWeight: 800, color: "#F0F4F8", letterSpacing: "-0.02em", marginBottom: "0.75rem" }}>{label}</h1>
+          {subheading && <p style={{ fontSize: "1rem", color: "#94A3B8", lineHeight: 1.6, maxWidth: "48rem" }}>{subheading}</p>}
         </div>
       </section>
       <section style={{ padding: "3rem 1.5rem" }}>
