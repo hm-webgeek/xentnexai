@@ -140,7 +140,8 @@ export default function AIAutomationPage() {
         badge="AI Automation Sunshine Coast"
         title="Stop Doing It All Manually — Let AI Run the Repetitive Stuff"
         subtitle="You started your business to do the work you love — not to spend your evenings chasing enquiries, rescheduling bookings, or following up on quotes that went cold. XentnexAI builds AI automation systems for Sunshine Coast businesses using platforms like OpenClaw, Make.com, and n8n — configured for your workflows, so the repetitive, time-draining tasks get handled for you."
-        image={{ src: "/images/xentnexai-hero-automation.png", alt: "Sunshine Coast business owner relaxed at cafe with AI automation running in the background", width: 1280, height: 640 }}
+        image={{ src: "/images/xentnexai-hero-automation.webp", alt: "Sunshine Coast business owner relaxed at cafe with AI automation running in the background", width: 1280, height: 640 }}
+        imageMobile={{ src: "/images/xentnexai-hero-automation-mobile.webp" }}
       />
 
       {/* Intro / Pain section */}
