@@ -4,6 +4,7 @@ import ServiceHero from "@/components/ServiceHero";
 import CTASection from "@/components/CTASection";
 import ContactForm from "@/components/ContactForm";
 import StructuredData from "@/components/StructuredData";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = buildMetadata({
   title: "AI Website Design Sunshine Coast | XentnexAI",
@@ -298,6 +299,16 @@ export default function AIWebsiteDesignPage() {
         </div>
       </section>
 
+      <RelatedLinks
+        services={[
+          { href: "/ai-lead-generation", title: "AI Lead Generation", tagline: "Make your new website work harder — capture and qualify leads automatically." },
+          { href: "/geo-audit-reports", title: "GEO Audit Reports", tagline: "Find out how your site ranks in AI search tools like ChatGPT and Perplexity." },
+        ]}
+        articles={[
+          { href: "/ai-news/2026-03-26-perplexity-ai-scraping-content-rights", title: "AI Search Engines Are Using Your Website Content", summary: "How AI-powered search tools read and rank your site — and why site structure matters more than ever." },
+          { href: "/ai-news/2026-04-13-ai-lead-generation-sunshine-coast", title: "Beyond Basic Chatbots: Workflow AI for Consistent Leads", summary: "Why your website needs more than a chat widget — a look at workflow-optimised AI for lead generation." },
+        ]}
+      />
       <CTASection
         heading="Your New Website Could Be Live This Week"
         subheading="Book a free consultation and we&apos;ll look at your current online presence, discuss what you need your website to do, and give you a clear picture of what we&apos;d build and what it would cost. No obligation, no hard sell."

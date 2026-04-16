@@ -4,6 +4,7 @@ import ServiceHero from "@/components/ServiceHero";
 import CTASection from "@/components/CTASection";
 import ContactForm from "@/components/ContactForm";
 import StructuredData from "@/components/StructuredData";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = buildMetadata({
   title: "GEO Audit Reports | AI Search Visibility",
@@ -256,6 +257,17 @@ export default function GEOAuditReportsPage() {
         </div>
       </section>
 
+      <RelatedLinks
+        services={[
+          { href: "/ai-website-design", title: "AI Website Design", tagline: "Improve your AI search presence with a GEO-optimised site built for visibility." },
+          { href: "/ai-lead-generation", title: "AI Lead Generation", tagline: "Turn your improved AI visibility into captured leads and booked appointments." },
+        ]}
+        articles={[
+          { href: "/ai-news/2026-03-26-perplexity-ai-scraping-content-rights", title: "AI Search Engines Are Using Your Website Content", summary: "What Perplexity AI's scraping controversy means for your website's AI search visibility — and what to do about it." },
+          { href: "/ai-news/2026-03-27-businesses-choosing-claude-over-chatgpt-2026", title: "Why Businesses Are Switching to Claude in 2026", summary: "The AI tools your customers use to find recommendations are changing — here's what that means for local visibility." },
+          { href: "/ai-news/2026-03-26-arc-agi-3-benchmark-ai-intelligence", title: "ARC-AGI-3: How Far AI Still Has to Go", summary: "Understanding the current limits of AI reasoning helps explain how AI search tools evaluate and recommend businesses." },
+        ]}
+      />
       <CTASection
         heading="Find Out Where You Stand in AI Search"
         subheading="Order your GEO Audit Report and discover exactly how — and whether — AI tools are recommending your Sunshine Coast business to potential customers."

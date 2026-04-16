@@ -4,6 +4,7 @@ import ServiceHero from "@/components/ServiceHero";
 import CTASection from "@/components/CTASection";
 import ContactForm from "@/components/ContactForm";
 import StructuredData from "@/components/StructuredData";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = buildMetadata({
   title: "AI Receptionist Sunshine Coast | Never Miss a Call",
@@ -227,6 +228,17 @@ export default function AIReceptionistPage() {
         </div>
       </section>
 
+      <RelatedLinks
+        services={[
+          { href: "/ai-lead-generation", title: "AI Lead Generation", tagline: "Capture more leads for your AI receptionist to qualify and book." },
+          { href: "/ai-automation", title: "AI Automation", tagline: "Connect your receptionist to your full business stack and automate the follow-up." },
+        ]}
+        articles={[
+          { href: "/ai-news/2026-04-08-ai-voice-agents-small-business-missed-calls", title: "97% of Small Businesses Using AI Voice Agents See Revenue Grow", summary: "New research reveals the significant revenue gap between businesses that have adopted AI voice and those that haven't." },
+          { href: "/ai-news/2026-04-04-ai-voice-agents-cloned-voices-small-business", title: "AI Voice Agents Are Taking Over the Phone", summary: "Voice AI is maturing fast — here's what Sunshine Coast businesses need to know before the window closes." },
+          { href: "/ai-news/2026-03-28-mistral-voxtral-tts-free-voice-ai", title: "Professional Voice AI Your Business Can Own", summary: "Open-weight voice models now rival paid platforms — and the cost barrier for voice AI has dropped dramatically." },
+        ]}
+      />
       <CTASection
         heading="Stop Missing Calls, Start Winning Customers"
         subheading="Book a free demo and hear your AI receptionist in action. We'll show you exactly how it would handle calls for your Sunshine Coast business."

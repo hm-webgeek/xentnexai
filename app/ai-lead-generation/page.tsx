@@ -4,6 +4,7 @@ import ServiceHero from "@/components/ServiceHero";
 import CTASection from "@/components/CTASection";
 import ContactForm from "@/components/ContactForm";
 import StructuredData from "@/components/StructuredData";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = buildMetadata({
   title: "AI Lead Generation Sunshine Coast",
@@ -227,6 +228,17 @@ export default function AILeadGenerationPage() {
         </div>
       </section>
 
+      <RelatedLinks
+        services={[
+          { href: "/ai-receptionist", title: "AI Receptionist", tagline: "Never miss a call from a captured lead — answer and qualify enquiries 24/7." },
+          { href: "/ai-automation", title: "AI Automation", tagline: "Automate your full lead-to-client workflow and stop doing the follow-up manually." },
+        ]}
+        articles={[
+          { href: "/ai-news/2026-04-13-ai-lead-generation-sunshine-coast", title: "Beyond Basic Chatbots: How Workflow AI Delivers Consistent Leads", summary: "Why workflow-optimised AI outperforms chat interfaces for sustained lead generation." },
+          { href: "/ai-news/2026-04-07-ai-crm-lead-capture-5-minute-rule", title: "The 5-Minute Rule: How AI Stops You Losing Leads While You Sleep", summary: "Respond within five minutes or lose 80% of leads — AI CRM systems now do it in under 60 seconds." },
+          { href: "/ai-news/2026-04-03-ai-lead-generation-data-enrichment-small-business", title: "AI Lead Generation in 2026: Automated Data Enrichment", summary: "New AI tools source, verify, and enrich prospect data automatically — up to 12x marketing ROI." },
+        ]}
+      />
       <CTASection
         heading="Ready to Automate Your Lead Generation?"
         subheading="Book a free strategy call and we'll show you exactly how many more leads your Sunshine Coast business could be capturing each month."

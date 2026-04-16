@@ -4,6 +4,7 @@ import ServiceHero from "@/components/ServiceHero";
 import CTASection from "@/components/CTASection";
 import ContactForm from "@/components/ContactForm";
 import StructuredData from "@/components/StructuredData";
+import RelatedLinks from "@/components/RelatedLinks";
 import Link from "next/link";
 
 export const metadata: Metadata = buildMetadata({
@@ -312,6 +313,17 @@ export default function AIAutomationPage() {
         </div>
       </section>
 
+      <RelatedLinks
+        services={[
+          { href: "/ai-lead-generation", title: "AI Lead Generation", tagline: "Add automated lead capture and qualification to your automation stack." },
+          { href: "/ai-receptionist", title: "AI Receptionist", tagline: "Connect your automation to a 24/7 call-answering and booking system." },
+        ]}
+        articles={[
+          { href: "/ai-news/2026-03-27-every-back-office-ai-agents-small-business", title: "Back-Office AI That Never Clocks Off", summary: "AI agents for accounting, HR, and finance are giving small businesses enterprise-level back-office automation." },
+          { href: "/ai-news/2026-04-07-ai-crm-lead-capture-5-minute-rule", title: "The 5-Minute Rule: AI CRM That Works While You Sleep", summary: "Automated CRM systems now respond to new enquiries in under 60 seconds — here's how they work." },
+          { href: "/ai-news/2026-03-27-meta-autonomous-ai-ad-campaigns-small-business", title: "Meta's Autonomous Ad Agents: AI Runs Your Campaigns End-to-End", summary: "Meta's AI agents now handle targeting, creative, bidding, and optimisation without human input." },
+        ]}
+      />
       <CTASection
         heading="Book a Free Automation Discovery Call"
         subheading="Thirty minutes. No hard sell. We'll listen to what's taking up your time and tell you honestly whether AI automation can help — and where to start."
