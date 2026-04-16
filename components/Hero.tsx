@@ -135,7 +135,7 @@ export default function Hero() {
             fontSize: "0.875rem",
           }}
         >
-          {["AI Lead Generation", "AI Voice Agents", "GEO Audit Reports"].map((item) => (
+          {["AI Lead Generation", "AI Receptionist", "GEO Audit Reports"].map((item) => (
             <div key={item} style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ color: "#2DD4BF", flexShrink: 0 }}>
                 <path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />

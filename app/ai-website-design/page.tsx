@@ -23,6 +23,43 @@ const serviceSchema = {
   serviceType: "AI Website Design",
 };
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How is an AI website different from a regular website?",
+      acceptedAnswer: { "@type": "Answer", text: "An AI-powered website is built with AI-native architecture from the ground up — structured data, content frameworks, and technical signals that help AI search tools like ChatGPT and Gemini understand and recommend your business. It's also built faster using AI-assisted processes, which keeps costs lower and turnaround times shorter. The end result looks like a high-quality professional site, but it's smarter under the hood." },
+    },
+    {
+      "@type": "Question",
+      name: "How much does it cost?",
+      acceptedAnswer: { "@type": "Answer", text: "Pricing depends on the size and complexity of the build. We publish starting-from pricing for standard business websites and give you a fixed quote before any work begins. Book a free consultation and we'll give you a clear number for your specific requirements." },
+    },
+    {
+      "@type": "Question",
+      name: "Do I own the site when it's built?",
+      acceptedAnswer: { "@type": "Answer", text: "Yes, completely. You own the domain, the code, and all the content. We don't lock you into proprietary platforms or monthly licences for the site itself." },
+    },
+    {
+      "@type": "Question",
+      name: "Will it rank on Google?",
+      acceptedAnswer: { "@type": "Answer", text: "We build every site with solid SEO foundations — proper page structure, metadata, fast load speeds, and mobile optimisation. That gives your site the best possible starting position in search. Long-term ranking depends on content, authority, and ongoing optimisation, which we can support separately." },
+    },
+    {
+      "@type": "Question",
+      name: "Can you add AI lead generation or an AI receptionist to my new site?",
+      acceptedAnswer: { "@type": "Answer", text: "Absolutely. Many of our clients bundle their new website with AI lead generation and an AI receptionist, creating a complete automated sales and enquiry system from day one. Ask us about our bundle pricing when you book your consultation." },
+    },
+    {
+      "@type": "Question",
+      name: "What if I already have a website — can you improve it instead?",
+      acceptedAnswer: { "@type": "Answer", text: "Yes. If your existing site is structurally sound, we can audit and improve it rather than starting from scratch. We'll tell you honestly whether a rebuild or a refresh makes more sense for your situation." },
+    },
+  ],
+};
+
 const FEATURES = [
   {
     icon: (
@@ -110,6 +147,7 @@ export default function AIWebsiteDesignPage() {
   return (
     <>
       <StructuredData data={serviceSchema} />
+      <StructuredData data={faqSchema} />
 
       <ServiceHero
         badge="Sunshine Coast AI Service"

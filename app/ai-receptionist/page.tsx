@@ -23,6 +23,46 @@ const serviceSchema = {
   serviceType: "AI Receptionist",
 };
 
+const FAQS = [
+  {
+    q: "Will it sound like a robot?",
+    a: "No — and that's the whole point. Our AI voice agents are powered by advanced natural language models that speak conversationally, respond to context, and don't sound scripted. Most callers don't realise they're talking to an AI unless they specifically ask. We provide demo calls so you can hear exactly what your customers will experience.",
+  },
+  {
+    q: "What happens when a call can't be handled?",
+    a: "The AI handles the vast majority of calls — enquiries, bookings, FAQs, and qualification. For calls that genuinely require a human (complex complaints, urgent issues, or calls where the caller insists), the AI can transfer directly to you or take a detailed message and send you an immediate notification.",
+  },
+  {
+    q: "Can it use my existing phone number?",
+    a: "Yes. We set up call forwarding so your existing business number routes to the AI receptionist when you can't answer — after hours, during busy periods, or all the time if you prefer. No need to change your number or update your marketing materials.",
+  },
+  {
+    q: "What booking systems does it integrate with?",
+    a: "We integrate with the most common Australian booking and calendar tools including Calendly, Google Calendar, Cliniko, Timely, HubDoc, and most practice management systems. During setup, we configure the AI to check your real availability and book directly — no double handling required.",
+  },
+  {
+    q: "How long does setup take?",
+    a: "Most AI receptionist setups go live within one to two weeks. The process involves an onboarding session where we capture your services, FAQs, and call handling preferences, followed by configuration, testing, and a monitored go-live period. You don't need to do any technical work yourself.",
+  },
+  {
+    q: "Is there a setup fee?",
+    a: "Pricing varies depending on call volume and integration complexity. We give you a clear, fixed quote before any work begins — no surprises. Book a free demo and we'll walk you through the options that fit your business and budget.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.a,
+    },
+  })),
+};
+
 const FEATURES = [
   {
     icon: (
@@ -96,6 +136,7 @@ export default function AIReceptionistPage() {
   return (
     <>
       <StructuredData data={serviceSchema} />
+      <StructuredData data={faqSchema} />
 
       <ServiceHero
         badge="Sunshine Coast AI Service"
@@ -159,6 +200,28 @@ export default function AIReceptionistPage() {
               <span key={ind} style={{ padding: "0.5rem 1.125rem", borderRadius: "9999px", border: "1px solid rgba(196, 122, 16, 0.25)", backgroundColor: "#FEF6E4", color: "#C47A10", fontSize: "0.875rem", fontWeight: 500 }}>
                 {ind}
               </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section style={{ backgroundColor: "#FFFFFF", padding: "5rem 1.5rem" }}>
+        <div style={{ maxWidth: "56rem", margin: "0 auto" }}>
+          <div style={{ textAlign: "center", marginBottom: "3rem" }}>
+            <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", fontWeight: 700, color: "#1A2740", letterSpacing: "-0.02em", marginBottom: "0.75rem" }}>
+              Common Questions About AI Receptionists
+            </h2>
+            <p style={{ color: "#64748B", fontSize: "1rem", lineHeight: 1.7, maxWidth: "52ch", margin: "0 auto" }}>
+              What Sunshine Coast business owners ask before going live with an AI receptionist.
+            </p>
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+            {FAQS.map((faq) => (
+              <div key={faq.q} style={{ padding: "1.5rem 1.75rem", borderRadius: "1rem", backgroundColor: "#F8FAFB", border: "1px solid #E8EFF4" }}>
+                <h3 style={{ color: "#1A2740", fontWeight: 600, fontSize: "1rem", marginBottom: "0.625rem" }}>{faq.q}</h3>
+                <p style={{ color: "#334155", fontSize: "0.9rem", lineHeight: 1.7, margin: 0 }}>{faq.a}</p>
+              </div>
             ))}
           </div>
         </div>

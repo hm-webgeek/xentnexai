@@ -117,10 +117,24 @@ const FAQS = [
   },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.a,
+    },
+  })),
+};
+
 export default function AIAutomationPage() {
   return (
     <>
       <StructuredData data={serviceSchema} />
+      <StructuredData data={faqSchema} />
 
       <ServiceHero
         badge="AI Automation Sunshine Coast"

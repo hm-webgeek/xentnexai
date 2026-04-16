@@ -23,6 +23,46 @@ const serviceSchema = {
   serviceType: "Generative Engine Optimisation",
 };
 
+const FAQS = [
+  {
+    q: "How is a GEO Audit different from a regular SEO audit?",
+    a: "A traditional SEO audit looks at how your business ranks in Google search results. A GEO Audit looks at whether your business is mentioned and recommended when people ask AI tools like ChatGPT, Google Gemini, or Perplexity for local recommendations. These are different systems with different ranking factors — a business can rank well on Google but be completely invisible in AI search, and vice versa.",
+  },
+  {
+    q: "How long does the audit take?",
+    a: "The full process — query testing, analysis, report writing, and the strategy walkthrough call — typically takes five to seven business days from the time we receive your brief. You'll receive a completed written report plus a 45-minute walkthrough call to work through the findings together.",
+  },
+  {
+    q: "What do I do with the report once I have it?",
+    a: "The report includes a prioritised action plan — specific steps, ranked by impact. Some actions you or your team can implement immediately (like updating your Google Business Profile or adding structured data to your website). Others may benefit from ongoing support, which we offer separately. Many clients use the report to direct their content and SEO investment for the next six to twelve months.",
+  },
+  {
+    q: "How often should I get a re-audit?",
+    a: "AI search platforms update frequently — new models, new citation patterns, and new local competitors can all shift your visibility over time. We recommend a re-audit every six months to track improvement and spot new gaps. We offer a discounted rate for returning clients.",
+  },
+  {
+    q: "What if my competitors are already showing up in AI search and I'm not?",
+    a: "That's exactly what the audit is for. We identify which competitors are winning AI mentions in your category, analyse why (what content signals, citations, and platforms are driving it), and give you a clear plan to close the gap. Being behind now doesn't mean you can't catch up — many of these factors can be improved relatively quickly once you know what to change.",
+  },
+  {
+    q: "Is this service available to businesses outside the Sunshine Coast?",
+    a: "Yes. While we're based on the Sunshine Coast and specialise in local businesses here, GEO Audit Reports are relevant for any business that wants to appear in AI search results — anywhere in Australia. The principles and methodology are the same regardless of your location.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.a,
+    },
+  })),
+};
+
 const FEATURES = [
   {
     icon: (
@@ -96,6 +136,7 @@ export default function GEOAuditReportsPage() {
   return (
     <>
       <StructuredData data={serviceSchema} />
+      <StructuredData data={faqSchema} />
 
       <ServiceHero
         badge="Sunshine Coast AI Service · New"
@@ -187,6 +228,28 @@ export default function GEOAuditReportsPage() {
                 <div style={{ color: "#C47A10", fontWeight: 800, fontSize: "1.5rem", marginBottom: "0.75rem" }}>{step.num}</div>
                 <h3 style={{ color: "#1A2740", fontWeight: 600, fontSize: "1rem", marginBottom: "0.5rem" }}>{step.title}</h3>
                 <p style={{ color: "#334155", fontSize: "0.875rem", lineHeight: 1.65 }}>{step.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section style={{ backgroundColor: "#FFFFFF", padding: "5rem 1.5rem" }}>
+        <div style={{ maxWidth: "56rem", margin: "0 auto" }}>
+          <div style={{ textAlign: "center", marginBottom: "3rem" }}>
+            <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", fontWeight: 700, color: "#1A2740", letterSpacing: "-0.02em", marginBottom: "0.75rem" }}>
+              Common Questions About GEO Audits
+            </h2>
+            <p style={{ color: "#64748B", fontSize: "1rem", lineHeight: 1.7, maxWidth: "52ch", margin: "0 auto" }}>
+              Everything Sunshine Coast business owners ask before ordering their first GEO Audit Report.
+            </p>
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+            {FAQS.map((faq) => (
+              <div key={faq.q} style={{ padding: "1.5rem 1.75rem", borderRadius: "1rem", backgroundColor: "#F8FAFB", border: "1px solid #E8EFF4" }}>
+                <h3 style={{ color: "#1A2740", fontWeight: 600, fontSize: "1rem", marginBottom: "0.625rem" }}>{faq.q}</h3>
+                <p style={{ color: "#334155", fontSize: "0.9rem", lineHeight: 1.7, margin: 0 }}>{faq.a}</p>
               </div>
             ))}
           </div>
